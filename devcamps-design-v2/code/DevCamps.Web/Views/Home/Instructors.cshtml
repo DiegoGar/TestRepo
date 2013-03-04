@@ -1,0 +1,24 @@
+﻿@model DevCamps.Web.Models.InstructorsViewModel
+<aside class="span3 instructors-accordion-sidebar sidebar" id="instructors">
+    <h1>Instructors</h1>
+
+    <div class="accordion">
+
+        @if (Model.Instructors != null && Model.Instructors.Any())
+        {
+            <ul class="unstyled">
+                @{
+                    int count = Model.Instructors.Count();
+                    int current = 1;
+                }
+                @foreach (var instructor in Model.Instructors)
+                {
+                    @Html.Partial("Instructor", instructor, new ViewDataDictionary { { "first", current == 1 }, { "last", current == count } })
+                        }
+            </ul>}
+        else
+        {
+            <div class="no-data">No data available</div>}
+
+    </div>
+</aside>

@@ -1,0 +1,13 @@
+﻿@model DevCamps.Data.Models.Instructor
+<li class="instructor collapsed">
+    <a class="accordion-toggle clearfix" href="#">
+        @if (Model.PictureUrl != null)
+        {
+            <img src="@Model.PictureUrl" alt="@Model.Name" />}
+        <span class="name">@Model.Name</span>
+        <span class="title">@Model.Title</span>
+    </a>
+    <div class="description collapse">
+        @Html.Raw(Model.Biography)
+    </div>
+</li>

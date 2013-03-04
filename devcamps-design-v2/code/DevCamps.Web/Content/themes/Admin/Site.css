@@ -1,0 +1,2816 @@
+﻿html, body {
+    height: 100%;
+    width: 100%;
+    color: #979797;
+    font-family: Arial, Sans-Serif;
+    font-size: 0.98em;
+    background: #fff;
+}
+
+/* --All Pages-- */
+.manage-actions {
+    display: none;
+}
+
+ul {
+    list-style-type: none;
+}
+
+.page header {
+    display: none;
+}
+
+.widget-control ul {
+    list-style-type: none;
+}
+
+header nav ul li a {
+    font-weight: normal;
+}
+
+section.single h2, section.double h2, aside.single h2, aside.double h2 {
+    font-weight: normal;
+}
+
+.box-content h1, .box-content h1 a {
+    font-weight: normal;
+}
+
+.contentItems {
+    list-style-type: none;
+}
+
+a {
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.content > p {
+    width: 190px;
+    height: 82px;
+    font-size: .8em;
+    margin-top: 1em;
+    margin-bottom: 2em;
+    margin-left: .1em;
+}
+
+/* Headers */
+
+h1, h2 {
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+h1 {
+    font-weight: bold;
+    font-size: 2em;
+    line-height: 36px;
+    margin-bottom: 15px;
+}
+
+h2 {
+    font-size: 1.3em;
+    text-align: center;
+    line-height: 2em;
+    font-weight: bold;
+}
+
+.content h1 {
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 1.8em;
+}
+
+/* Buttons */
+
+.content .button > p {
+    text-transform: uppercase;
+    text-align: center;
+    font-size: 21px;
+    letter-spacing: 1px;
+    padding-top: 14px;
+    color: white !important;
+    font-weight: normal;
+}
+
+.button {
+    width: 189px;
+    height: 61px;
+}
+
+html.opacity .button:hover {
+    opacity: 0.9 !important;
+}
+
+a .button:hover {
+    opacity: 0.9 !important;
+}
+
+.phone-button {
+    background-image: url('images/phone/phone_button_sprite.png');
+}
+
+.azure-button {
+    background-image: url('images/azure/azure_button_sprite.png');
+}
+
+.windows-button {
+    background-image: url('images/windows/windows_button_sprite.png');
+}
+
+.web-button {
+    background-image: url('images/web/web_button_sprite.png');
+}
+
+.officesharepoint-button {
+    background-image: url('images/office/officesharepoint_button_sprite.png');
+}
+
+
+html.no-opacity .button:hover {
+    background-position: -189px;
+}
+
+body.phone .button {
+    background-image: url('images/phone/phone_button_sprite.png');
+}
+
+body.azure .button {
+    background-image: url('images/azure/azure_button_sprite.png');
+}
+
+body.web .button {
+    background-image: url('images/web/web_button_sprite.png');
+}
+
+body.windows .button {
+    background-image: url('images/windows/windows_button_sprite.png');
+}
+
+body.office .button {
+    background-image: url('images/office/officesharepoint_button_sprite.png');
+}
+
+/*Active Slide */
+body.phone .activeSlide {
+}
+
+/* --Landing Page-- */
+#landing-content {
+    background: url('images/background_texture.png') repeat-x;
+    min-width: 1200px;
+    margin: auto auto;
+}
+
+body.landing footer {
+    display: block;
+    position: relative;
+    width: 400px;
+    margin: 0px auto 40px auto;
+    right: 310px;
+    font-size: .8em;
+    color: #cacaca;
+}
+
+#parallax {
+    position: relative;
+    overflow: hidden;
+    width: 1200px;
+    height: 1250px;
+    margin: auto auto;
+}
+
+#landing-logo {
+    position: absolute;
+    top: 48px;
+    left: 100px;
+    height: 250px;
+    width: 700px;
+    background-image: url("images/logo.png");
+    background-repeat: no-repeat;
+    text-indent: -3000px;
+    white-space: nowrap;
+}
+
+#notauthenticated-logo {
+    left: 0px;
+    height: 100px;
+    width: 700px;
+    background-image: url("images/logo.png");
+    background-repeat: no-repeat;
+    white-space: nowrap;
+}
+
+#bubble {
+    position: absolute;
+    font-weight: bold;
+    font-style: italic;
+    text-shadow: 0 0 1px #fff;
+    background-image: url('images/speak_bubble.png');
+    width: 123px;
+    height: 90px;
+    left: 538px;
+    top: 13px;
+}
+
+    #bubble p {
+        margin-top: 10px;
+        margin-left: 20px;
+    }
+
+#background #trail {
+    top: 60px;
+    left: 50px;
+    height: 1138px;
+    width: 1100px;
+    background: url('images/trail.png') no-repeat;
+}
+
+#background, #background div {
+    position: absolute;
+}
+
+#landing-content h1 {
+    font-weight: normal;
+    letter-spacing: 1px;
+    font-size: 35px;
+}
+
+body.landing .content p {
+    color: #979797;
+}
+
+#parallax .scene {
+    position: absolute;
+    height: 300px;
+    width: 300px;
+    top: 40px;
+    left: 250px;
+}
+
+    #parallax .scene div {
+        position: relative;
+        width: 286px;
+    }
+
+#parallax .content {
+    position: absolute;
+}
+
+    #parallax .content a {
+        text-decoration: none;
+        width: 189px;
+        display: inline-block;
+    }
+
+/*************************************************
+HOMEPAGE SCENES
+*************************************************/
+
+#phone, #azure, #windows, #web, #error, #office-sharepoint {
+    position: relative;
+}
+
+#landing-phone-layer, #landing-azure-layer, #landing-web-layer, #landing-windows-layer, #landing-office-sharepoint-layer {
+    width: 300px;
+    height: 300px;
+}
+
+#landing-content .scene div {
+    display: block;
+    background-repeat: no-repeat;
+}
+
+/*** WINDOWS ***/
+
+.landing-windows-header {
+    color: #7acbbd;
+    text-shadow: -0.5px 0px;
+}
+
+#windows {
+    left: 650px;
+    top: 120px;
+}
+
+    #windows .scene {
+        top: 62px;
+        left: 226px;
+    }
+
+#landing-windows-layer {
+    background: url(images/windows/scene-windows-camps.png) no-repeat;
+}
+
+/*** PHONE ***/
+
+.landing-phone-header {
+    color: #e28677;
+    text-shadow: -0.5px 0px;
+}
+
+#phone {
+    left: 100px;
+    top: 271px;
+}
+
+    #phone .scene {
+        left: 197px;
+        top: 48px;
+    }
+
+#landing-phone-layer {
+    background: url(images/phone/scene-phone-camps.png) no-repeat;
+}
+
+/*** AZURE ***/
+
+.landing-azure-header {
+    color: #71967b;
+    text-shadow: -0.5px 0px;
+}
+
+#azure {
+    left: 650px;
+    top: 497px;
+}
+
+#landing-azure-layer {
+    background: url(images/azure/scene-azure-camps.png) no-repeat;
+}
+
+/*** WEB ***/
+
+.landing-web-header {
+    color: #8986c7;
+    text-shadow: -0.5px 0px;
+}
+
+#web {
+    left: 100px;
+    top: 648px;
+}
+
+    #web .scene {
+        top: 0px;
+        left: 221px;
+    }
+
+#landing-web-layer {
+    background: url(images/web/scene-web-camps.png) no-repeat;
+}
+
+/*** OFFICE SHAREPOINT ***/
+
+.landing-officesharepoint-header {
+    color: #c36aa9;
+    text-shadow: -0.5px 0px;
+}
+
+#office-sharepoint {
+    left: 651px;
+    top: 858px;
+}
+
+    #office-sharepoint .scene {
+        left: 218px;
+        top: 62px;
+    }
+
+
+#landing-office-sharepoint-layer {
+    background: url(images/office/scene-office-sharepoint-camps.png) no-repeat;
+}
+
+
+/*** ERROR ***/
+#error {
+    left: 104px;
+    top: 210px;
+}
+
+    #error .content > p {
+        width: 450px;
+    }
+
+/* --Camp Pages-- */
+
+/* General Formatting */
+
+#content {
+    position: relative;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0;
+}
+
+.single, .double {
+    min-height: 100px;
+    margin: 14px; /*padding-bottom: 1.2em;*/
+}
+
+.single {
+    float: left;
+    width: 289px;
+}
+
+.double {
+    float: left;
+    width: 606px;
+}
+
+    .single p, .double p {
+        font-size: .8em;
+        color: #58595b;
+    }
+
+/* Headers */
+
+body.phone h1 {
+    color: #e28677;
+    text-shadow: 0 0 #e28677;
+}
+
+body.azure h1 {
+    color: #73947d;
+    text-shadow: 0px 0 #73947d;
+}
+
+body.notauthenticated h1 {
+    color: #73947d;
+    text-shadow: 0px 0 #73947d;
+}
+
+body.web h1 {
+    color: #8986c7;
+    text-shadow: 0px 0 #8986c7;
+}
+
+body.windows h1 {
+    color: #7acbbd;
+    text-shadow: 0px 0 #7acbbd;
+}
+
+body.office h1 {
+    color: #78b946;
+    text-shadow: 0px 0 #78b946;
+}
+
+body.phone h2 {
+    color: #98808a;
+}
+
+body.azure h2 {
+    color: #56b2d3;
+}
+
+body.notauthenticated h2 {
+    color: #56b2d3;
+}
+
+body.web h2 {
+    color: #48b7a9;
+}
+
+body.windows h2 {
+    color: #d8bc63;
+}
+
+body.office h2 {
+    color: #78b946;
+}
+
+/* Header Backgrounds */
+
+body.phone .single h2 {
+    background-image: url("images/phone/phone_single_header_bg.png");
+    background-repeat: no-repeat;
+}
+
+body.azure .single h2 {
+    background-image: url("images/azure/azure_single_header_bg.png");
+    background-repeat: no-repeat;
+}
+
+body.web .single h2 {
+    background-image: url("images/windows/windows_single_header_bg.png");
+    background-repeat: no-repeat;
+}
+
+body.windows .single h2 {
+    background-image: url("images/web/web_single_header_bg.png");
+    background-repeat: no-repeat;
+}
+
+body.office .single h2 {
+    background-image: url("images/office/office_single_header_bg.png");
+    background-repeat: no-repeat;
+}
+
+body.phone .double h2 {
+    background-image: url("images/phone/phone_double_header_bg.png");
+    background-repeat: no-repeat;
+}
+
+body.azure .double h2 {
+    background-image: url("images/azure/azure_double_header_bg.png");
+    background-repeat: no-repeat;
+}
+
+body.web .double h2 {
+    background-image: url("images/windows/windows_double_header_bg.png");
+    background-repeat: no-repeat;
+}
+
+body.windows .double h2 {
+    background-image: url("images/web/web_double_header_bg.png");
+    background-repeat: no-repeat;
+}
+
+body.office .double h2 {
+    background-image: url("images/office/office_double_header_bg.png");
+    background-repeat: no-repeat;
+}
+
+
+/* Anchors */
+
+a:hover {
+    opacity: 0.9;
+}
+
+a.landing:hover {
+    opacity: 0.9;
+}
+
+a.agenda-nav:hover, a.schedule-nav:hover, a.downloads-nav:hover, a.instructors-nav:hover, a.faq-nav:hover {
+    opacity: 0.5;
+}
+
+.home-nav:hover {
+    opacity: 1;
+}
+
+body.phone a {
+    color: #e28677;
+}
+
+.no-opacity body.phone a:hover {
+    color: #dfbcb6;
+}
+
+body.azure a {
+    color: #96ab70;
+}
+
+.no-opacity body.azure a:hover {
+    color: #cdd8b8;
+}
+
+body.web a {
+    color: #00c1c5;
+}
+
+.no-opacity body.web a:hover {
+    color: #b1f8f9;
+}
+
+body.windows a {
+    color: #7acbbd;
+}
+
+.no-opacity body.windows a:hover {
+    color: #bfe9e2;
+}
+
+body.office a {
+    color: #78b946;
+}
+
+.no-opacity body.office a:hover {
+    color: #98d964;
+}
+
+a.big {
+    font-size: 19px;
+    text-transform: uppercase;
+}
+
+    a.big:hover {
+        opacity: 0.5;
+    }
+
+body.phone a.big {
+    color: #83c77c;
+}
+
+body.azure a.big {
+    color: #8ca561;
+}
+
+body.web a.big {
+    color: #8885c6;
+}
+
+body.windows a.big {
+    color: #ff8b75;
+}
+
+/* -The Header- */
+
+header {
+    display: block;
+    clear: both;
+    width: 100%;
+    height: 197px;
+}
+
+/* Tiled Header Backgrounds */
+#camp_wrapper {
+    margin-top: 0;
+    height: 190px;
+}
+
+body.phone #camp_wrapper {
+    background: url('images/phone/phone_header_tile.png') repeat-x;
+}
+
+body.azure #camp_wrapper {
+    background: url('images/azure/azure_header_tile.png') repeat-x;
+}
+
+body.web #camp_wrapper {
+    background: url('images/windows/windows_header_tile.png') repeat-x;
+}
+
+body.windows #camp_wrapper {
+    background: url('images/web/web_header_tile.png') repeat-x;
+}
+
+body.office #camp_wrapper {
+    background: url('images/office/office_header_tile.png') repeat-x;
+}
+
+
+/* Logo */
+#logo {
+    position: absolute;
+    top: 95px;
+    left: 14px;
+}
+
+#mainLogo {
+    position: absolute;
+    top: 25px;
+    left: 14px;
+    height: 51px;
+    width: 239px;
+}
+
+body.azure #mainLogo {
+    background-image: url('images/azure/azure-main-logo.png');
+    background-repeat: no-repeat;
+}
+
+body.windows #mainLogo {
+    background-image: url('images/windows/windows-main-logo.png');
+    background-repeat: no-repeat;
+}
+
+body.office #mainLogo {
+    background-image: url('images/office/office-main-logo.png');
+    background-repeat: no-repeat;
+}
+
+body.web #mainLogo {
+    background-image: url('images/web/web-main-logo.png');
+    background-repeat: no-repeat;
+}
+
+body.phone #mainLogo {
+    background-image: url('images/phone/phone-main-logo.png');
+    background-repeat: no-repeat;
+}
+
+
+
+/* Logo*/
+
+
+body.phone .logo-image {
+    background-image: url('images/phone/phone_logo.png');
+    background-repeat: no-repeat;
+    width: 210px;
+    height: 30px;
+}
+
+body.azure .logo-image {
+    background-image: url('images/azure/azure_logo.png');
+    background-repeat: no-repeat;
+    width: 233px;
+    height: 30px;
+}
+
+body.web .logo-image {
+    background-image: url('images/web/web_logo.png');
+    background-repeat: no-repeat;
+    width: 149px;
+    height: 30px;
+}
+
+body.windows .logo-image {
+    background-image: url('images/windows/windows_logo.png');
+    background-repeat: no-repeat;
+    width: 163px;
+    height: 30px;
+}
+
+body.office .logo-image {
+    background-image: url('images/office/office_brand.png');
+    background-repeat: no-repeat;
+    width: 230px;
+    height: 35px;
+}
+
+.hidden-page-header {
+    position: absolute;
+    text-indent: -3000px;
+    height: 100px;
+    width: 300px;
+    white-space: nowrap;
+}
+
+/* Upper Right Hand Social Networking Images and Icons */
+
+#socnet-image {
+    position: absolute;
+    right: 50px;
+    height: 150px;
+    width: 300px;
+    background-repeat: no-repeat;
+}
+
+body.phone #socnet-image {
+    background-image: url('images/phone/phone_socnet_image.png');
+    width: 274px;
+}
+
+body.azure #socnet-image {
+    background-image: url('images/azure/azure_socnet_image.png');
+    width: 221px;
+}
+
+body.web #socnet-image {
+    background-image: url('images/web/web_socnet_image.png');
+    width: 182px;
+}
+
+body.windows #socnet-image {
+    background-image: url('images/windows/windows_socnet_image.png');
+    width: 122px;
+}
+
+body.office #socnet-image {
+    background-image: url('images/office/office_socnet_image.png');
+    right: 120px;
+    width: 103px;
+}
+
+body.phone #socnet-icons {
+    position: absolute;
+    left: 105px;
+    top: 8px;
+}
+
+body.azure #socnet-icons {
+    position: absolute;
+    left: 85px;
+    top: 8px;
+}
+
+body.windows #socnet-icons {
+    position: absolute;
+    left: 32px;
+    top: 10px;
+}
+
+body.web #socnet-icons {
+    position: absolute;
+    left: 68px;
+    top: 8px;
+}
+
+body.office #socnet-icons {
+    position: absolute;
+    left: 21px;
+    top: 8px;
+}
+
+.twitter-icon {
+    background-image: url("images/twitter_icon.png");
+    background-repeat: no-repeat;
+    display: inline-block;
+    height: 25px;
+    width: 25px;
+}
+
+.no-opacity .twitter-icon:hover {
+    background-image: url("images/twitter_icon_transparent.png");
+}
+
+.facebook-icon {
+    background-image: url("images/facebook_icon.png");
+    background-repeat: no-repeat;
+    display: inline-block;
+    height: 25px;
+    width: 25px;
+}
+
+.no-opacity .facebook-icon:hover {
+    background-image: url("images/facebook_icon_transparent.png");
+}
+
+.twit-face {
+    margin-right: 5px;
+}
+
+
+
+/* Navigation */
+
+header ul {
+    position: absolute;
+    top: 97px;
+    right: 30px;
+    z-index: 20;
+}
+
+    header ul li {
+        display: inline;
+        text-transform: uppercase;
+        text-shadow: 0 0 1px #ccc;
+        margin-right: 30px;
+    }
+
+header a {
+    text-decoration: none;
+    font-size: 1.4em;
+    letter-spacing: 1px;
+}
+
+body.phone header a {
+    color: #98808a;
+    text-shadow: 0 0 0 #98808a;
+}
+
+.no-opacity body.phone header a:hover {
+    color: #bbb2b5;
+}
+
+body.azure header a {
+    color: #59b5da;
+    text-shadow: 0 0 0 #59b5da;
+}
+
+.no-opacity body.azure header a:hover {
+    color: #bce3f3;
+}
+
+body.web header a {
+    color: #5cbfa9;
+    text-shadow: 0 0 0 #5cbfa9;
+}
+
+.no-opacity body.web header a:hover {
+    color: #beeae0;
+}
+
+body.windows header a {
+    color: #b4a77d;
+    text-shadow: 0 0 0 #b4a77d;
+}
+
+.no-opacity body.windows header a:hover {
+    color: #e8e0c5;
+}
+
+body.office header a {
+    color: #78b946;
+    text-shadow: 0 0 0 #78b946;
+}
+
+.no-opacity body.office header a:hover {
+    color: #98d964;
+}
+
+#intro-button {
+    margin-top: 20px;
+}
+
+/* Parallax Illustration */
+
+.hero {
+    width: 406px;
+    height: 320px;
+}
+
+.hero-container {
+    position: relative;
+    left: 400px;
+    width: 500px;
+    height: 320px;
+    margin-right: 0px;
+}
+
+#hero_hit {
+    width: 800px;
+    height: 420px;
+    right: -10px;
+    top: 119px;
+    position: absolute;
+    overflow: visible;
+}
+
+.illustration-bg {
+    width: 686px;
+    height: 69px;
+    top: -68px;
+}
+
+.illustration-layer4 {
+    width: 686px;
+    height: 313px;
+}
+
+.illustration-layer3 {
+    width: 686px;
+    height: 313px;
+}
+
+.illustration-layer2 {
+    width: 686px;
+    height: 313px;
+}
+
+.illustration-layer1 {
+    width: 686px;
+    height: 313px;
+}
+
+body.phone .illustration-bg {
+    background-image: url('images/phone/phone_illustration_bg.png');
+}
+
+body.phone .illustration-layer4 {
+    background-image: url('images/phone/phone_illustration_layer4.png');
+}
+
+body.phone .illustration-layer3 {
+    background-image: url('images/phone/phone_illustration_layer3.png');
+}
+
+body.phone .illustration-layer2 {
+    background-image: url('images/phone/phone_illustration_layer2.png');
+}
+
+body.phone .illustration-layer1 {
+    background-image: url('images/phone/phone_illustration_layer1.png');
+}
+
+body.azure .illustration-bg {
+    background-image: url('images/azure/azure_illustration_bg.png');
+}
+
+body.azure .illustration-layer4 {
+    background-image: url('images/azure/azure_illustration_layer4.png');
+}
+
+body.azure .illustration-layer3 {
+    background-image: url('images/azure/azure_illustration_layer3.png');
+}
+
+body.azure .illustration-layer2 {
+    background-image: url('images/azure/azure_illustration_layer2.png');
+}
+
+body.azure .illustration-layer1 {
+    background-image: url('images/azure/azure_illustration_layer1.png');
+}
+
+body.windows .illustration-bg {
+    background-image: url('images/windows/windows_illustration_bg.png');
+}
+
+body.windows .illustration-layer4 {
+    background-image: url('images/windows/windows_illustration_layer4.png');
+}
+
+body.windows .illustration-layer3 {
+    background-image: url('images/windows/windows_illustration_layer3.png');
+}
+
+body.windows .illustration-layer2 {
+    background-image: url('images/windows/windows_illustration_layer2.png');
+}
+
+body.windows .illustration-layer1 {
+    background-image: url('images/windows/windows_illustration_layer1.png');
+}
+
+body.web .illustration-bg {
+    background-image: url('images/web/web_illustration_bg.png');
+}
+
+body.web .illustration-layer4 {
+    background-image: url('images/web/web_illustration_layer4.png');
+}
+
+body.web .illustration-layer3 {
+    background-image: url('images/web/web_illustration_layer3.png');
+}
+
+body.web .illustration-layer2 {
+    background-image: url('images/web/web_illustration_layer2.png');
+}
+
+body.web .illustration-layer1 {
+    background-image: url('images/web/web_illustration_layer1.png');
+}
+
+body.office .illustration-bg {
+    background-image: url('images/office/office_illustration_bg.png');
+}
+
+body.office .illustration-layer1 {
+    background-image: url('images/office/office_illustration_layer1.png');
+}
+
+/* Bubble Text */
+
+#bubble-text {
+    font-family: Arial;
+    font-size: 18px;
+    font-weight: bold;
+    font-style: italic;
+    width: 110px;
+    position: absolute;
+}
+
+body.phone #bubble-text {
+    color: #98808a;
+    left: 313px;
+    top: 100px;
+}
+
+body.azure #bubble-text {
+    color: #5cb8d5;
+    left: 370px;
+    top: 122px;
+}
+
+body.windows #bubble-text {
+    color: #ffb7a0;
+    left: 322px;
+    top: 98px;
+}
+
+body.web #bubble-text {
+    color: #0ca7b2;
+    left: 317px;
+    top: 103px;
+}
+
+/* -Main Content- */
+
+section#main {
+    padding-top: 40px;
+}
+
+/* Box Content */
+
+.box-content {
+    padding-top: .8em;
+    padding-left: 1.2em;
+    padding-right: 1.2em;
+}
+
+/* Increase box padding for slider widget so aligns with the "What Are. . . " widget that sits to the right of the slider */
+.zone-dynamic .box-content {
+    padding-top: 1.2em;
+    min-height: 405px;
+}
+
+.what-box {
+    min-height: 405px;
+    padding-bottom: .4em;
+}
+
+.twitter-box {
+    padding-top: 0px;
+}
+
+/* Increase box margin only for schedule widget (in video zone) (Chris feedback 2011-11-24*/
+.zone-video .box-content {
+    padding: .2em 1.2em 1.2em 1.2em;
+}
+
+.box-content .agenda-item {
+    margin-bottom: 2.5em;
+    float: left;
+}
+
+.box-content a {
+    /*	font-family: Arial;*/
+}
+/*
+.box-content p
+{ 
+    margin-bottom: 1em;
+}
+*/
+.single p, .double p, #schedule, .dynamic p {
+    font-size: .8em;
+    color: #58595b;
+}
+
+
+.standard-row-height {
+    /*height: 350px; - replaced by min-height to allow schedule widget grow dynamically     (Chris feedback 2011-11-24)*/
+    min-height: 350px;
+}
+
+.zone-schedule .standard-row-height {
+    min-height: 100px;
+}
+
+.zone-footer .standard-row-height {
+    min-height: 0px;
+}
+
+.zone-footer .box-content {
+    padding-left: 0em;
+}
+
+.narrow-row-height {
+    height: 40px;
+}
+
+.sidebar-row-height {
+    max-height: 250px;
+    padding-bottom: 1.2em;
+}
+
+p.header, span.header {
+    font-weight: bold;
+    font-size: 15px;
+    padding-top: 1.2em;
+    text-shadow: -1px 0 0 #ccc;
+}
+
+html.instructors span.header, html.camp span.header {
+    position: relative;
+    top: -4px;
+}
+
+/* Sidebar */
+
+.sidebar {
+    float: right;
+    margin-right: 55px;
+}
+
+.sidebar-button {
+    position: relative;
+    margin-top: 25px;
+}
+
+/* Schedule Section */
+
+#loc-col {
+    float: left;
+    margin-left: 1.1em;
+    margin-right: 1.5em;
+}
+
+#date-col {
+    text-align: center;
+}
+
+.schedule-indent {
+    margin-top: 10px;
+    padding: 0px 7px;
+}
+
+#loc-col p, #date-col p {
+    color: #58595b;
+    margin-top: 1em;
+}
+
+    #loc-col p.header, #date-col p.header {
+        margin-top: 0;
+    }
+
+/* Instructor/ Agenda Section */
+
+.instructors .no-data {
+    text-align: center;
+}
+
+.instructor-photo {
+    float: left;
+    padding: 0 10px 0px 0;
+    height: auto;
+    width: 82px;
+}
+
+.instructor-title, .agenda-subheader {
+    font-style: italic;
+    font-size: 0.935em;
+    display: block;
+    position: relative;
+    top: -4px;
+    margin-bottom: 10px;
+}
+
+.agenda-subheader {
+    margin-top: 5px;
+}
+
+.instructor-anchor {
+    margin-top: 1em;
+}
+
+/* Tools Section */
+
+.tools-arrow {
+    background-repeat: no-repeat;
+    height: 25px;
+    width: 25px;
+    display: inline-block;
+    margin-left: 7px;
+    position: relative;
+    top: 7px;
+}
+
+body.phone .tools-arrow {
+    background-image: url("images/phone/phone_tools_arrow_transparent.png");
+    background-image: url("images/phone/phone_tools_arrow.png");
+}
+
+body.azure .tools-arrow {
+    background-image: url("images/azure/azure_tools_arrow_transparent.png");
+    background-image: url("images/azure/azure_tools_arrow.png");
+}
+
+body.web .tools-arrow {
+    background-image: url("images/web/web_tools_arrow.png");
+}
+
+body.windows .tools-arrow {
+    background-image: url("images/windows/windows_tools_arrow.png");
+}
+
+.tools-a {
+    text-align: center;
+    display: block;
+    margin-top: 1.5em;
+    margin-bottom: 1em;
+    margin-right: 0.6em;
+    line-height: 1em;
+}
+
+.no-opacity .azure .tools-a:hover {
+    color: #bfcfa2;
+}
+
+    .no-opacity .azure .tools-a:hover .tools-arrow {
+        background-image: url("images/azure/azure_tools_arrow_transparent.png");
+    }
+
+.no-opacity .phone .tools-a:hover {
+    color: #c1e6bd;
+}
+
+    .no-opacity .phone .tools-a:hover .tools-arrow {
+        background-image: url("images/phone/phone_tools_arrow_transparent.png");
+    }
+
+.no-opacity .windows .tools-a:hover {
+    color: #f9cdc5;
+}
+
+    .no-opacity .windows .tools-a:hover .tools-arrow {
+        background-image: url("images/windows/windows_tools_arrow_transparent.png");
+    }
+
+.no-opacity .web .tools-a:hover {
+    color: #bebce9;
+}
+
+    .no-opacity .web .tools-a:hover .tools-arrow {
+        background-image: url("images/web/web_tools_arrow_transparent.png");
+    }
+
+/* Content-Box Background Colors */
+
+body.phone .bg-1 {
+    background-color: #fefcfc;
+}
+
+body.phone .bg-2 {
+    background-color: #fdf7f6;
+}
+
+body.azure .bg-1 {
+    background-color: #f9fbfc;
+}
+
+body.web .bg-1 {
+    background-color: #f5fbf7;
+}
+
+body.web .bg-2 {
+    background-color: #e8f6f2;
+}
+
+body.windows .bg-1 {
+    background-color: #fefef5;
+}
+
+body.windows .bg-2 {
+    background-color: #fefce7;
+}
+
+body.office .bg-1 {
+    background-color: #f9fdf0;
+}
+
+/* Input */
+
+.input {
+    width: 230px;
+    display: inline-block;
+}
+
+.input-box {
+    border-style: none;
+    width: 200px;
+    height: 24px;
+    padding-left: 10px;
+    vertical-align: middle;
+}
+
+    .input-box:focus {
+        outline: none;
+    }
+
+body.phone .input-box {
+    background-color: #efeaeb;
+}
+
+body.azure .input-box {
+    background-color: #eaeced;
+}
+
+body.web .input-box {
+    background-color: #dcf2eb;
+}
+
+body.windows .input-box {
+    background-color: #faf6e2;
+}
+
+
+.submit {
+    text-transform: uppercase;
+    font-size: 20px;
+}
+
+/* Footer */
+
+footer {
+    position: relative;
+    margin: 10px auto 15px 14px;
+    font-size: .8em;
+    color: #58595b;
+    clear: both;
+    text-align: center;
+    padding-bottom: 1.2em;
+}
+
+.footer {
+    position: relative;
+    width: 1000px;
+    margin: 0px 0px 40px 0px;
+    font-size: .8em;
+    color: #58595b;
+    clear: both;
+    float: left;
+}
+
+html.camp footer, html.schedule footer {
+    right: 320px;
+}
+
+html.faq footer, html.agenda footer, html.instructors footer, html.downloads footer {
+    right: 335px;
+}
+
+
+/* --Sub Pages-- */
+
+.right-two-col {
+    float: right;
+    width: 260px;
+}
+
+.left-two-col {
+    float: left;
+    width: 260px;
+}
+
+.header-landscape {
+    position: absolute;
+    height: 180px;
+    width: 700px;
+}
+
+body .landscape-image {
+    right: 0;
+}
+
+body.phone .landscape-image {
+    background-image: url('images/phone/phone_landscape_image.png');
+    background-repeat: no-repeat;
+    top: 121px;
+}
+
+body.azure .landscape-image {
+    background-image: url('images/azure/azure_landscape_image.png');
+    background-repeat: no-repeat;
+    top: 125px;
+}
+
+body.windows .landscape-image {
+    background-image: url('images/windows/windows_landscape_image.png');
+    background-repeat: no-repeat;
+    top: 128px;
+}
+
+body.web .landscape-image {
+    background-image: url('images/web/web_landscape_image.png');
+    background-repeat: no-repeat;
+    top: 124px;
+}
+
+body.office .landscape-image {
+    background-image: url('images/office/office_landscape_image.png');
+    background-repeat: no-repeat;
+    top: 63px;
+}
+
+html.faq header, html.agenda header, html.instructors header, html.schedule header, html.downloads header {
+    margin-bottom: 4em;
+}
+
+.double .col dt {
+    margin-top: 0em;
+}
+
+/* -Schedule- */
+
+.four-col {
+    margin: 0em;
+    float: left;
+}
+
+    .four-col div {
+        float: left;
+        width: 115px;
+        margin-left: 0.75em;
+        margin-right: 0.75em;
+    }
+
+    .four-col .date {
+        float: left;
+        width: 130px;
+        margin-left: 0.75em;
+        margin-right: 0.75em;
+    }
+
+    .four-col .registration {
+        float: left;
+        width: 100px;
+        margin-left: 0.75em;
+        margin-right: 0.75em;
+    }
+
+.one-col {
+    margin: 0em;
+    float: left;
+}
+
+    .one-col div {
+        float: left;
+        width: 440px;
+        margin-bottom: 20px;
+        margin-left: 0.75em;
+        margin-right: 0.75em;
+    }
+
+.schedule-table {
+    margin: 0px; /*overflow: auto; /*    max-height:470px; - Removed to avoid scrollbar (Chris feedback 2011-11-24)*/
+}
+
+.schedule-table-content {
+    /* margin-top: 1.7em; - Removed to avoid too much sapcing between header and content     (Chris feedback 2011-11-24)*/
+}
+
+.four-col p, .four-col h1 {
+    margin-bottom: 1.5em;
+}
+
+.double .col p {
+    margin-top: 0px;
+}
+
+dt.instructor {
+    font-size: 1em;
+}
+
+/* -Downloads- */
+
+.download-item a.download-anchor {
+    font-size: 1.5em;
+    display: block;
+    margin-top: 0.5em;
+    margin-bottom: 1.5em;
+    width: 170px;
+}
+
+.download-arrow {
+    display: inline-block;
+    width: 18px;
+    height: 22px;
+    background-repeat: no-repeat;
+    margin-left: 10px;
+    position: relative;
+    top: 3px;
+}
+
+body.phone .download-arrow {
+    background-image: url("images/phone/phone_download_arrow.png");
+}
+
+body.azure .download-arrow {
+    background-image: url("images/azure/azure_download_arrow.png");
+}
+
+body.web .download-arrow {
+    background-image: url("images/web/web_download_arrow.png");
+}
+
+body.windows .download-arrow {
+    background-image: url("images/windows/windows_download_arrow.png");
+}
+
+.no-opacity body.phone .download-anchor:hover {
+    color: #c1e6bd;
+}
+
+    .no-opacity body.phone .download-anchor:hover .download-arrow {
+        background-image: url("images/phone/phone_download_arrow_transparent.png");
+    }
+
+.no-opacity body.azure .download-anchor:hover {
+    color: #bfcfa2;
+}
+
+    .no-opacity body.azure .download-anchor:hover .download-arrow {
+        background-image: url("images/azure/azure_download_arrow_transparent.png");
+    }
+
+.no-opacity body.windows .download-anchor:hover {
+    color: #f9cdc5;
+}
+
+    .no-opacity body.windows .download-anchor:hover .download-arrow {
+        background-image: url("images/windows/windows_download_arrow_transparent.png");
+    }
+
+.no-opacity body.web .download-anchor:hover {
+    color: #bebce9;
+}
+
+    .no-opacity body.web .download-anchor:hover .download-arrow {
+        background-image: url("images/web/web_download_arrow_transparent.png");
+    }
+
+.box-image {
+    margin-right: 0.5em;
+    margin-left: 0.5em;
+    margin-bottom: 1em;
+    display: inline-block;
+}
+
+.flair {
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+/* General Classes */
+
+.clear {
+    clear: both;
+}
+
+/* Schedule Widget */
+
+.schedule-widget-body {
+    /*max-height:335px;     overflow:hidden - Removed to let the widget grow dynamically (Chris feedback 2011-11-24)*/
+}
+
+.schedule-widget-row {
+    float: left;
+    width: 100%;
+    margin-bottom: 1em;
+}
+
+.schedule-widget-right-column {
+    width: 33%;
+    text-align: left;
+    float: right;
+    text-indent: 25px;
+}
+
+.schedule-widget-center-column {
+    width: 33%;
+    text-align: left;
+    float: left;
+    text-indent: 25px;
+}
+
+.schedule-widget-left-column {
+    width: 33%;
+    text-align: left;
+    float: left;
+}
+
+/* Featured Employee widget */
+.featured-employee-widget {
+    min-height: 200px;
+    max-height: 300px;
+}
+
+    .featured-employee-widget img {
+        width: 82px;
+        height: auto;
+    }
+
+/* Forms
+***************************************************************/
+
+form {
+    margin: 0;
+    padding: 0;
+}
+
+legend {
+    font-size: 1.231em;
+    font-weight: normal;
+    border: none;
+    visibility: hidden;
+}
+
+fieldset {
+    padding: 6px 0 0;
+    margin: 0 0 12px 0;
+    left: 0;
+    border: 0px solid #dbdbdb;
+}
+
+label {
+    font-weight: normal;
+    display: block;
+    padding: 0 0 0.3em 0;
+}
+
+    label.forcheckbox {
+        margin: 0 0 0 .4em;
+        display: inline;
+    }
+
+
+form.inline, form.inline fieldset {
+    display: inline;
+}
+
+    form.inline fieldset {
+        margin: 0;
+    }
+
+form .login-form ol {
+    list-style: none;
+}
+
+.validation-summary-errors, .field-validation-error {
+    color: Red;
+}
+
+/* Content pages */
+
+.past-camps .registration {
+    display: none;
+}
+/*
+.past-camps .four-col div
+{
+    width:150px;
+    float: left;
+    margin-left: 0.75em;
+    margin-right: 0.75em;
+}
+
+.past-camps .four-col .date
+{
+    margin-left:30px;
+    padding-right:30px;
+}
+
+*/
+/* Pager
+***************************************************************/
+
+.pager-footer {
+    width: 500px;
+    margin-bottom: 40px;
+    margin-left: 3px;
+}
+
+.page-size-options {
+    float: left;
+    padding-right: 40px;
+    margin-left: auto;
+}
+
+html.dyn #submit-pager, html.dyn .apply-bulk-actions-auto {
+    display: none;
+}
+
+.pager {
+    list-style: none;
+    padding: 0;
+    margin: 2px 0 0 0;
+}
+
+    .pager li {
+        float: left;
+        padding: 0 0 0 0;
+        margin: 0 6px 0 0;
+        color: #333333;
+        cursor: pointer;
+    }
+
+
+    .pager a, .pager span {
+        padding: 2px 8px;
+        font-size: 0.8em;
+    }
+
+        .pager a:hover {
+            background-color: #eaeaea;
+            color: #333;
+        }
+
+    .pager span {
+        background-color: inherit;
+    }
+
+.phone-image {
+    background-image: url('images/phone/phone_logo.png');
+    background-repeat: round;
+    background-size: 100% 100%;
+    background-origin: content-box;
+}
+
+.azure-image {
+    background-image: url('images/azure/azure_logo.png');
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    background-origin: content-box;
+}
+
+.web-image {
+    background-image: url('images/web/web_logo.png');
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    background-origin: content-box;
+}
+
+.windows-image {
+    background-image: url('images/windows/windows_logo.png');
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    background-origin: content-box;
+}
+
+.logo-holder div {
+    margin-bottom: 3em;
+    width: 188px;
+    height: 80px;
+}
+
+.logo-holder .web-logo {
+    margin-left: 82px;
+    width: 98px;
+    height: 80px;
+}
+
+.logo-holder .main-logo {
+    margin-bottom: 1.2em;
+    margin-left: 6px;
+    width: 239px;
+    height: 51px;
+}
+
+.main-image {
+    background-image: url('images/logo_small.png');
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    background-origin: content-box;
+}
+
+.instructors-item {
+    height: 175px;
+    width: 260px;
+    overflow: hidden;
+    float: left;
+}
+
+.instructor-pager .pager-footer {
+    margin-bottom: 0 !important;
+    margin-left: 9px;
+    padding-top: 5px;
+}
+
+.box-content a.read-more {
+    font-size: 0.8em;
+}
+
+/* jqModal base Styling courtesy of;
+  Brice Burgess <bhb@iceburg.net> */
+
+/* The Window's CSS z-index value is respected (takes priority). If none is supplied,
+  the Window's z-index value will be set to 3000 by default (in jqModal.js). You
+  can change this value by either;
+    a) supplying one via CSS
+    b) passing the "zIndex" parameter. E.g.  (window).jqm({zIndex: 500}); */
+
+.jqmWindow {
+    display: none;
+    position: fixed;
+    top: 25%;
+    left: 50%;
+    margin-left: -300px;
+    width: 600px;
+    background-color: #FFF;
+    color: #333;
+    border: 1px solid black;
+    padding: 12px;
+}
+
+    .jqmWindow img {
+        float: left;
+    }
+
+.jqmOverlay {
+    background-color: #000;
+}
+
+/* Fixed posistioning emulation for IE6
+     Star selector used to hide definition from browsers other than IE6
+     For valid CSS, use a conditional include instead */
+* html .jqmWindow {
+    position: absolute;
+    top: expression((document.documentElement.scrollTop || document.body.scrollTop) + Math.round(17 * (document.documentElement.offsetHeight || document.body.clientHeight) / 100) + 'px');
+}
+
+.brand-icon {
+    background-repeat: no-repeat;
+}
+
+.brand-windowsphone {
+    background-image: url("images/phone/phone_brand.png");
+    width: 165px;
+    height: 35px;
+    margin: 19px 23px 23px 0px;
+}
+
+.brand-windows {
+    background-image: url("images/windows/windows_brand.png");
+    width: 130px;
+    height: 23px;
+    margin: 19px 23px 23px 0px;
+}
+
+.brand-web {
+    background-image: url("images/web/web_brand.png");
+    width: 140px;
+    height: 22px;
+    margin: 21px 23px 23px 0;
+}
+
+.brand-windowsazure {
+    background-image: url("images/azure/azure_brand.png");
+    width: 165px;
+    height: 22px;
+    margin: 19px 23px 23px 0px;
+}
+
+.brand-office {
+    background-image: url("images/office/office_brand.png");
+    width: 230px;
+    height: 33px;
+    margin: 19px 23px 23px 0px;
+}
+
+
+/*New styles for custom filtering*/
+.table-filter {
+    padding: 10px 0px 30px;
+    background: url("images/sep-wide.png") no-repeat center bottom;
+    height: 25px;
+}
+
+label.search {
+    display: inline;
+}
+
+#quickfind {
+    width: 455px;
+    margin-right: 5px;
+}
+
+input, select {
+    border: 1px solid #ccc;
+    -moz-box-shadow: inset 0 0 4px #ccc;
+    -webkit-box-shadow: inset 0 0 4px #ccc;
+    box-shadow: inset 0 0 4px #ccc;
+}
+
+input {
+    padding: 3px 6px;
+}
+
+select {
+    padding: 3px 2px 3px 6px;
+}
+
+#clearfilters {
+    text-indent: -9999px;
+    border: 1px solid #F7DED9;
+    display: inline-block;
+    width: 26px;
+    height: 22px;
+    position: relative;
+    top: 0px;
+    cursor: pointer;
+}
+
+body.phone #clearfilters {
+    background: url('images/phone/btn-clear-filter.jpg') transparent no-repeat 0 0;
+    border: 1px solid #F7DED9;
+}
+
+body.web #clearfilters {
+    background: url('images/web/btn-clear-filter.jpg') transparent no-repeat 0 0;
+    border: 1px solid #5cbfa9;
+}
+
+body.azure #clearfilters {
+    background: url('images/azure/btn-clear-filter.jpg') transparent no-repeat 0 0;
+    border: 1px solid #59b5da;
+}
+
+body.windows #clearfilters {
+    background: url('images/windows/btn-clear-filter.jpg') transparent no-repeat 0 0;
+    border: 1px solid #b4a77d;
+}
+
+body.office #clearfilters {
+    background: url('images/office/btn-clear-filter.jpg') transparent no-repeat 0 0;
+    border: 1px solid #b4a77d;
+}
+
+
+#clearfilters:hover {
+    border-color: #EDB4A7;
+}
+
+.water {
+    font-family: Verdana;
+    color: gray;
+    width: 200px;
+    font-style: italic;
+}
+
+.nowater {
+    font-family: Verdana;
+    color: black;
+    width: 200px;
+    font-style: normal;
+}
+
+/*************************************************
+MEDIA QUERIES
+*************************************************/
+/* styles that are consistent anywhere below 1000px in width */
+@media only screen and (max-width: 1000px) {
+    /* camp pages */
+    /* shift the menu down */
+    nav ul {
+        top: 140px;
+        margin-left: 5%;
+        right: auto;
+    }
+
+    #camp_wrapper {
+        height: 260px;
+    }
+
+    section#main {
+        padding-top: 150px;
+    }
+
+    .box-content {
+        min-height: 0;
+    }
+
+    .featured-employee-widget {
+        max-height: none;
+    }
+
+    #logo, #mainLogo {
+        left: 0;
+        margin-left: 5%;
+    }
+
+    #logo {
+        top: 85px;
+    }
+
+    .double, .single, footer {
+        width: 90%;
+        margin: 10px 5%;
+        overflow-x: auto;
+    }
+
+    nobr {
+        white-space: normal;
+    }
+
+    #quickfind {
+        width: 60%;
+    }
+
+    body.office .landscape-image {
+        top: 100px;
+        height: 248px;
+        background-position: 20px 50%;
+    }
+
+    .landscape-image {
+        top: 100px;
+        height: 248px;
+        background-position: 20px 50%;
+    }
+
+    body.office .double h2, body.office .single h2, body.windows .double h2, body.windows .single h2, body.phone .double h2, body.phone .single h2, body.azure .double h2, body.azure .single h2, body.web .double h2, body.web .single h2 {
+        background-image: none;
+        background-repeat: no-repeat;
+        box-shadow: 0px 0px 8px #555;
+        display: inline-block;
+        width: 100%;
+    }
+
+    body.office .double h2, body.office .single h2 {
+        background-color: #DBF4A4;
+    }
+
+    body.windows .double h2, body.windows .single h2 {
+        background-color: #FCF8DC;
+    }
+
+    body.phone .double h2, body.phone .single h2 {
+        background-color: #FBEDEB;
+    }
+
+    body.azure .double h2, body.azure .single h2 {
+        background-color: #DFF1F6;
+    }
+
+    body.web .double h2, body.web .single h2 {
+        background-color: #E3F7EF;
+    }
+}
+
+@media only screen and (max-width: 660px) {
+
+    /* Homepage */
+
+    html, body {
+        min-width: 320px;
+    }
+
+    #landing-content {
+        min-width: 320px;
+    }
+
+    h1 {
+        line-height: 30px;
+    }
+
+    #landing-content h1 {
+        font-size: 27px;
+        margin-top: 0px;
+        margin-bottom: 0px;
+    }
+
+    #parallax {
+        margin: 0px auto;
+        width: 320px;
+        height: 3020px;
+    }
+
+    #landing-logo {
+        position: relative;
+        top: 26px;
+        left: 40px;
+        height: 65px;
+        background-image: url("images/logo-320.png");
+    }
+
+    #background #trail {
+        width: 320px;
+        top: 0px;
+        left: 0px;
+        height: 3000px;
+        background: url('images/trail-320.png') no-repeat;
+    }
+
+    #phone, #azure, #windows, #web, #error, #office-sharepoint {
+        position: relative;
+    }
+
+    .content > p {
+        width: 225px;
+        margin-bottom: 10px;
+        margin-left: 10px;
+    }
+
+    .button {
+        margin-left: 20px;
+    }
+
+    .brand-icon {
+        margin-top: 10px;
+    }
+
+    /*** WINDOWS ***/
+
+    #windows {
+        left: 40px;
+        top: 130px;
+        height: 380px;
+    }
+
+        #windows .content {
+            position: relative;
+            width: 240px;
+        }
+
+        #windows .scene {
+            position: relative;
+            left: 0px;
+            top: 0px;
+            height: 236px;
+        }
+
+    #landing-windows-layer {
+        background: url(images/windows/scene-windows-camps-320.png) no-repeat;
+    }
+
+    /*** PHONE ***/
+
+    #phone {
+        left: 40px;
+        height: 350px;
+        top: 330px;
+    }
+
+        #phone .content {
+            position: relative;
+            width: 240px;
+        }
+
+        #phone .scene {
+            position: relative;
+            left: 0px;
+            top: 0px;
+            height: 196px;
+        }
+
+    #landing-phone-layer {
+        background: url(images/phone/scene-phone-camps-320.png) no-repeat;
+    }
+
+    /*** AZURE ***/
+
+    #azure {
+        left: 40px;
+        height: 410px;
+        top: 565px;
+    }
+
+        #azure .content {
+            position: relative;
+            width: 260px;
+        }
+
+        #azure .scene {
+            position: relative;
+            left: 0px;
+            top: 0px;
+            height: 212px;
+        }
+
+
+    /*** WEB ***/
+
+    #web {
+        left: 40px;
+        height: 360px;
+        top: 700px;
+    }
+
+        #web .content {
+            position: relative;
+            width: 260px;
+        }
+
+        #web .scene {
+            position: relative;
+            left: 0px;
+            top: 0px;
+            height: 243px;
+        }
+
+    /*** OFFICE SHAREPOINT ***/
+
+    .brand-office {
+        margin-top: 5px;
+    }
+
+    #office-sharepoint {
+        left: 40px;
+        height: 430px;
+        top: 900px;
+    }
+
+        #office-sharepoint .content {
+            position: relative;
+            width: 260px;
+        }
+
+        #office-sharepoint .scene {
+            position: relative;
+            left: 0px;
+            top: 0px;
+            height: 206px;
+        }
+
+    /*** ERROR ***/
+    #error {
+        left: 20px;
+        height: 430px;
+    }
+
+        #error .content > p {
+            width: 450px;
+        }
+
+
+    /* Camp pages */
+    section#main {
+        padding-top: 90px;
+    }
+
+    #camp_wrapper {
+        height: 400px;
+    }
+
+    body.phone #camp_wrapper {
+        height: 380px;
+    }
+
+    body.windows #camp_wrapper {
+        height: 370px;
+    }
+
+    nav ul li {
+        display: block;
+    }
+
+    header {
+        height: 365px;
+    }
+
+    body.office .landscape-image, body.windows .landscape-image, body.azure .landscape-image, body.phone .landscape-image, body.web .landscape-image {
+        top: 235px;
+        background-position: 100px 50%;
+    }
+
+    body.office #socnet-image, body.azure #socnet-image, body.web #socnet-image, body.windows #socnet-image, body.phone #socnet-image {
+        right: 10px;
+    }
+
+    body.phone {
+        overflow-x: hidden;
+    }
+
+        body.phone #socnet-image {
+            right: -100px;
+        }
+}
+
+@media only screen and (min-width: 660px) and (max-width: 1100px) {
+
+    /* Homepage*/
+
+    html, body {
+        min-width: 660px;
+    }
+
+    #landing-content {
+        min-width: 660px;
+    }
+
+        #landing-content h1 {
+        }
+
+    #parallax {
+        margin: 0px auto;
+        width: 660px;
+        height: 2000px;
+    }
+
+    #landing-logo {
+        position: relative;
+        top: 30px;
+        left: 100px;
+        height: 96px;
+        background-image: url("images/logo.png");
+    }
+
+    #background #trail {
+        background: none;
+        width: 100%;
+        left: 0px;
+        top: 0px;
+        background: url('images/trail-tablet.png') no-repeat;
+        height: 2000px;
+    }
+
+    #bubble {
+        left: 545px;
+        top: 14px;
+        background-image: url('images/speak_bubble-tablet.png');
+        background-repeat: no-repeat;
+    }
+
+        #bubble p {
+            font-size: 12px;
+            width: 80px;
+        }
+
+    #phone, #azure, #windows, #web, #error, #office-sharepoint {
+        position: relative;
+        width: 100%;
+    }
+
+    .content > p {
+        width: 40%;
+        margin-bottom: 10px;
+        left: -10px;
+    }
+
+    /*** OFFICE SHAREPOINT ***/
+
+    #office-sharepoint {
+        left: 80px;
+        height: 550px;
+        top: 0px;
+    }
+
+        #office-sharepoint .content {
+            position: relative;
+            width: 100%;
+        }
+
+        #office-sharepoint .scene {
+            left: 300px;
+            top: 60px;
+        }
+
+    /*** PHONE ***/
+
+    #phone {
+        left: 80px;
+        height: 340px;
+        top: 0px;
+    }
+
+        #phone .content {
+            position: relative;
+            width: 100%;
+        }
+
+        #phone .scene {
+            left: 280px;
+            top: 60px;
+        }
+
+    #landing-phone-layer {
+        background: url(images/phone/scene-phone-camps-320.png) no-repeat;
+    }
+
+    /*** AZURE ***/
+
+    #azure {
+        left: 80px;
+        height: 330px;
+        top: 0px;
+    }
+
+        #azure .content {
+            position: relative;
+            width: 100%;
+        }
+
+        #azure .scene {
+            left: 290px;
+            top: 20px;
+        }
+
+
+    /*** WEB ***/
+
+    #web {
+        left: 80px;
+        height: 340px;
+        top: 0px;
+    }
+
+        #web .content {
+            position: relative;
+            width: 100%;
+        }
+
+        #web .scene {
+            left: 270px;
+            top: 0px;
+        }
+
+    /*** WINDOWS ***/
+
+    #windows {
+        left: 80px;
+        height: 550px;
+        top: 210px;
+    }
+
+        #windows .content {
+            position: relative;
+            width: 100%;
+        }
+
+        #windows .scene {
+            left: 280px;
+            top: 20px;
+        }
+
+    /*** ERROR ***/
+    #error {
+        left: 40px;
+        top: 210px;
+    }
+
+        #error .content > p {
+            width: 450px;
+        }
+
+    /* Camp pages */
+
+}
+
+/* Featured Items Slider Widget */
+.zone-featured .widget-featured-item-slider-widget {
+    margin: 17px 0px 0px;
+}
+
+div#slideNav {
+    float: right;
+    list-style-type: none;
+    position: relative;
+    right: 0;
+    top: 7px;
+    height: 0px;
+    margin: 0px !important;
+    z-index: 99;
+}
+
+    div#slideNav a {
+        display: block;
+        float: left;
+        margin-right: 5px;
+        height: 10px !important;
+        background-color: #b3b3b3;
+        height: 10px;
+        width: 10px;
+        text-indent: -9999px;
+        display: block;
+    }
+
+body.phone div#slideNav a.activeSlide {
+    background-color: #e28677;
+}
+
+body.azure div#slideNav a.activeSlide {
+    background-color: #73947d;
+}
+
+body.web div#slideNav a.activeSlide {
+    background-color: #8986c7;
+}
+
+body.windows div#slideNav a.activeSlide {
+    background-color: #7acbbd;
+}
+
+
+.featureSlider ul {
+    margin: 0px;
+    padding: 0px;
+    list-style-type: none;
+}
+
+    .featureSlider ul li {
+        display: block;
+    }
+
+        .featureSlider ul li p + h2 { /* padding-top: 21px;*/
+        }
+
+        .featureSlider ul li h2 {
+            /*           text-transform: uppercase;
+            font-size: 35px;
+            line-height: 1em;
+            margin: 0px 0px 10px;
+            padding-top: 35px;
+            line-height: 1.05em;
+            font-weight: normal !important;*/
+        }
+
+            .featureSlider ul li h2 a {
+                text-decoration: none;
+            }
+
+.featureSlider h1 {
+    clear: both;
+    padding-top: 7px;
+    margin-bottom: 0px;
+}
+
+.featureSlider ul li h3 {
+    margin: 0px;
+    font-size: 1.328em !important;
+    font-weight: normal !important;
+}
+
+.featureSlider ul li p {
+    /*font-size: 9px;*/
+    /*margin-top: 10px;
+            opacity:0.5;
+            filter:alpha(opacity=50);
+            /*text-align: right; */
+    /*padding: 0px 10px 0px 0px;
+            margin: 0px;*/
+    padding-bottom: 10px;
+    padding-top: 5px;
+    margin-bottom: 0;
+}
+
+.featureSlider ul li span {
+    float: left;
+    margin-right: 20px;
+    display: block;
+}
+
+.hiddenItem {
+    display: none !important;
+}
+
+/**** Admin section*/
+body.admin #content {
+    max-width: none;
+}
+
+body.admin header {
+    top: 25px;
+    height: 75px;
+}
+
+    body.admin header nav #mainLogo {
+        background-image: url('images/admin/admin-main-logo.png');
+        background-repeat: no-repeat;
+    }
+
+    body.admin header nav ul {
+        top: inherit;
+    }
+
+body.admin section.admin {
+    min-height: 100px;
+    margin: 14px;
+    /*float: left;*/
+}
+
+body.admin .bg-1 {
+    background-color: #F7F7F7;
+}
+
+body.admin .admin h2 {
+    background-image: url("images/admin/admin_double_header_bg.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    font-weight: normal;
+}
+
+body.admin .single {
+    width: auto;
+}
+
+    body.admin .single h2 {
+        background-image: url("images/admin/admin_single_header_bg.png");
+        background-repeat: no-repeat;
+    }
+
+body.admin legend {
+    display: none;
+}
+
+body.admin .login-form ol {
+    margin-bottom: 10px;
+}
+
+body.admin .table-filter {
+    height: 25px;
+    padding-right: 10px;
+    padding-bottom: 20px;
+    display: table;
+    width: 100%;
+}
+
+body.admin .button {
+    background-image: url('images/admin/admin_button_sprite.png');
+    background-size: 100% 100%;
+    width: auto;
+    min-width: 78px;
+    height: 25px;
+    cursor: pointer;
+    color: white !important;
+    font-size: 16px;
+    font-weight: normal;
+    letter-spacing: 1px;
+    text-align: center;
+    text-transform: uppercase;
+    margin-top: 0px;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+    body.admin .button > p {
+        line-height: 25px;
+    }
+
+body.admin input.button,
+body.admin button.button {
+    border: 0px none;
+    box-shadow: none;
+    font-family: prenton-condensed, Arial, Sans-Serif;
+    padding: 0 0 0 0;
+}
+
+body.admin input[type="file"] {
+    display: none;
+}
+
+body.admin .editor {
+    width: 100%;
+}
+
+fieldset {
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+    fieldset .table {
+        width: 100%;
+    }
+
+
+    fieldset .editor-label,
+    fieldset .editor-field,
+    fieldset .display-label,
+    fieldset .display-field {
+        padding: 5px 5px 5px 5px;
+        min-height: 30px;
+    }
+
+    fieldset .editor-label,
+    fieldset .display-label {
+        clear: left;
+        float: left;
+        width: 110px;
+        text-align: right;
+        white-space: nowrap;
+    }
+
+        fieldset .editor-label label,
+        fieldset .display-label label {
+            font-size: 15px;
+            font-weight: bold;
+        }
+
+    body.admin fieldset .editor-field {
+        overflow: hidden;
+        min-width: 500px;
+    }
+
+        body.admin fieldset .editor-field .large {
+            width: 99%;
+        }
+
+        body.admin fieldset .editor-field.html-editor {
+            height: inherit;
+        }
+
+        body.admin fieldset .editor-field .file-button {
+            float: right;
+        }
+
+        body.admin fieldset .editor-field .file-textbox {
+            padding-right: 0px;
+            font-weight: normal;
+        }
+
+.column {
+    float: left;
+    margin: 0 0 10px 10px;
+    display: table-cell;
+}
+
+body.admin .right {
+    float: right;
+}
+
+body.admin .searchterms {
+    width: 375px;
+}
+
+
+body.admin #create-button {
+    float: right;
+}
+
+body.admin div.action-icons {
+    white-space: nowrap;
+    width: 48px;
+}
+
+    body.admin div.action-icons a {
+        float: left;
+    }
+
+.admin.delete div {
+    text-align: left;
+}
+
+.admin.delete div .button{
+    text-align: center;
+}
+
+.admin.delete .display-field {
+    padding-left: 150px;
+}

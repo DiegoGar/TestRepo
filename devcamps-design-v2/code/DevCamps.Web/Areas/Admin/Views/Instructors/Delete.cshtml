@@ -1,0 +1,30 @@
+﻿@model DevCamps.Data.Models.Instructor
+
+@{
+    ViewBag.Title = "Administration - Delete Instructor";
+}
+<section class="admin delete">
+    <div class="table bg-1">
+
+        <h2>Delete Instructor</h2>
+
+        @Html.DisplayForModel()
+
+        @using (Html.BeginForm())
+        {
+            <div class="column">
+                <div class="action-button">
+                    <input type="submit" class="button" value="Delete" />
+                </div>
+            </div>
+        }
+        <div class="column">
+            <a href="@Url.Action("Index")">
+                <div class="button">
+                    <p>Back</p>
+                </div>
+            </a>
+        </div>
+        <div class="clear" />
+    </div>
+</section>

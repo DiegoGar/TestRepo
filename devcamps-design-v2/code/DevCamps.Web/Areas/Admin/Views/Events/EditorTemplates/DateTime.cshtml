@@ -1,0 +1,9 @@
+﻿@model System.DateTime?
+@{
+    var modelDateTime = Model ?? DateTime.Today.AddHours(9);
+}
+<div>
+    @Html.HiddenFor(model => model, new { @class = "datetime-field target" })
+    @Html.TextBox("date-field", modelDateTime.ToShortDateString(), new { @class = "datetime-field date" })
+    @Html.TextBox("date-field", modelDateTime.ToShortTimeString(), new { @class = "datetime-field time" })
+</div>

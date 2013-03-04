@@ -1,0 +1,26 @@
+﻿@{
+    var contactEmail = ViewBag.ContactEmail ?? "devcamps@microsoft.com";
+}
+<footer class="wrap">
+    <div class="row-fluid">
+        <div class="span9">
+            <nav class="footer">
+                @Html.Partial(@"LearnMoreWidget",
+                    (IEnumerable<DevCamps.Data.Models.CampType>) ViewBag.CampTypes,
+                    new ViewDataDictionary { { "section", "footer" } })
+            </nav>
+            <div class="copyright">&copy; 2007-2013 Microsoft. All rights reserved.</div>
+        </div>
+
+        <div class="span3">
+            <h3>Contact Us</h3>
+
+            <address>
+                <a href="mailto:@contactEmail">@contactEmail</a>
+            </address>
+
+            @Html.Partial(@"Layout\SocialIcons", new ViewDataDictionary { { "section", "footer" } })
+
+        </div>
+    </div>
+</footer>

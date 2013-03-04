@@ -1,0 +1,62 @@
+﻿@model DevCamps.Web.Areas.Admin.Models.InstructorViewModel
+
+@Html.ValidationSummary(true)
+
+<fieldset>
+    <legend>Event</legend>
+    @Html.HiddenFor(model => model.Instructor.InstructorId)
+    <div class="editor-label">
+        @Html.LabelFor(model => model.Instructor.CampTypeId, "CampType")
+    </div>
+    <div class="editor-field">
+        @Html.DropDownListFor(model => model.Instructor.CampTypeId, (SelectList)ViewBag.CampTypes)
+        @Html.ValidationMessageFor(model => model.Instructor.CampTypeId)
+    </div>
+    <div class="editor-label">
+        @Html.LabelFor(model => model.Instructor.Name)
+    </div>
+    <div class="editor-field">
+        @Html.TextBoxFor(model => model.Instructor.Name, new { @class = "large" })
+        @Html.ValidationMessageFor(model => model.Instructor.Name)
+    </div>
+    <div class="editor-label">
+        @Html.LabelFor(model => model.Instructor.Title)
+    </div>
+    <div class="editor-field">
+        @Html.TextBoxFor(model => model.Instructor.Title, new { @class = "large" })
+        @Html.ValidationMessageFor(model => model.Instructor.Title)
+    </div>
+    <div class="editor-label">
+        @Html.LabelFor(model => model.Picture)
+    </div>
+    <div class="editor-field">
+        @Html.TextBoxFor(model => model.Picture, new { type = "file" })
+        <input class="button file-button" value="Browse" type="button" />
+        <div style="overflow: hidden;">
+            @Html.HiddenFor(model => model.Instructor.PictureUrl)
+            @{var pictureUrl = (Model.Instructor != null) ? Model.Instructor.PictureUrl : string.Empty;}
+            @Html.TextBox("PictureUrl", pictureUrl, new { @class = "large file-textbox" })
+            <img class="file-image" src="@pictureUrl" style="display:none;"/>
+        </div>
+        @Html.ValidationMessageFor(model => model.Picture)
+    </div>
+    <div class="editor-label">
+        @Html.LabelFor(model => model.HtmlBiography)
+    </div>
+    <div class="editor-field html-editor">
+        @Html.EditorFor(model => model.HtmlBiography)
+        @Html.ValidationMessageFor(model => model.HtmlBiography)
+    </div>
+    <div class="column">
+        <div class="action-button">
+            <input type="submit" class="button" value="Save" />
+        </div>
+    </div>
+    <div class="column">
+        <a href="@Url.Action("Index")">
+            <div class="button">
+                <p>Cancel</p>
+            </div>
+        </a>
+    </div>
+</fieldset>

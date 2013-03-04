@@ -1,0 +1,23 @@
+﻿@model DevCamps.Web.Models.EventViewModel
+@{
+    ViewBag.Title = "Microsoft DevCamps - Event";
+    ViewBag.CampType = Model.CampType.CampType;
+    ViewBag.BodyCssClass = Model.CampType.BodyCssClass;
+    ViewBag.ContactEmail = Model.CampType.ContactEmail;
+
+}
+<div class="zone zone-content">
+    <div class="content-page-body">
+        <aside class="single sidebar">
+            <h2>Go to camp!</h2>
+            <div class="box-content bg-1 sidebar-row-height">
+                @Html.Partial("Content\\GoToCamp")
+            </div>
+        </aside>
+
+        <section class='double bg-1 event'>
+            <h2>Event Details</h2>
+            @Html.DisplayFor(model => model.Event);
+        </section>
+    </div>
+</div>

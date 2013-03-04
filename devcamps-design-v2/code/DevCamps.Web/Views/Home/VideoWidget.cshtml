@@ -1,0 +1,9 @@
+﻿@model DevCamps.Web.Models.VideoWidgetViewModel
+<div class="video span4">
+    <a href="#" target="_blank" title="@Model.Title">
+        <img class="thumb" src="@Model.Thumbnail" />
+        <img class="play" src="@Url.Content("~/Content/themes/DevCamps/images/video-play.png")" />
+    </a>
+    <h4>@Model.Title</h4>
+    <p>@Model.Description</p>
+</div>

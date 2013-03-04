@@ -1,0 +1,22 @@
+﻿@model DevCamps.Data.Models.Event
+<tr>
+    <td>
+        @Html.DisplayFor(model => model.Location)
+    </td>
+    <td>
+        @Model.StartDateTime.ToShortDateString() @Model.StartDateTime.ToShortTimeString()
+    </td>
+    <td>
+        @Html.DisplayFor(model => model.Technology)
+    </td>
+    <td>
+        @Html.DisplayFor(model => model.RegistrationUrl)
+    </td>
+    <td>
+        <div class="action-icons">
+            @Html.ActionLink("Edit", "Edit", new { id = Model.EventId }, new { @class = "ui-icon ui-icon-pencil", title = "Edit" })
+            @Html.ActionLink("Details", "Details", new { id = Model.EventId }, new { @class = "ui-icon ui-icon-search", title = "View Details" })
+            @Html.ActionLink("Delete", "Delete", new { id = Model.EventId }, new { @class = "ui-icon ui-icon-closethick", title = "Delete" })
+        </div>
+    </td>
+</tr>

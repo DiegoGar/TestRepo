@@ -1,0 +1,9 @@
+﻿@{
+    var section = this.ViewData["section"] ?? string.Empty;
+}
+<a class="facebook" title="Share on Facebook" target="_blank"
+    href="http://www.facebook.com/sharer.php?u=http%3a%2f%2fdevcamps.ms/ I'm attending DevCamps to learn how to build Office and SharePoint apps. Go to http%3a%2f%2fdevcamps.ms%2foffice to sign up for a camp!">
+    <img src="@Url.Content("~/Content/themes/DevCamps/images/facebook-" + @section + ".png")" alt="Facebook" /></a>
+<a class="twitter" title="Share on Twitter" target="_blank"
+    href="http://twitter.com/home?status=I'm attending %23DevCamps to learn how to build %23Office and SharePoint apps. Go to http%3a%2f%2fdevcamps.ms%2foffice to sign up for a camp!">
+    <img src="@Url.Content("~/Content/themes/DevCamps/images/twitter-" + @section + ".png")" alt="Twitter" /></a>

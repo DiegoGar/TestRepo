@@ -1,0 +1,66 @@
+﻿@model DevCamps.Data.Models.Event
+@{
+    var durationDaysSelectList = new SelectList(new int[] { 1, 2 });
+}
+@Html.ValidationSummary(true)
+
+<fieldset>
+    <legend>Event</legend>
+    @Html.HiddenFor(model => model.EventId)
+    <div class="editor-label">
+        @Html.LabelFor(model => model.CampTypeId)
+    </div>
+    <div class="editor-field">
+        @Html.DropDownList("CampTypeId")
+        @Html.ValidationMessageFor(model => model.CampTypeId)
+    </div>
+    <div class="editor-label">
+        @Html.LabelFor(model => model.Location)
+    </div>
+    <div class="editor-field">
+        @Html.TextBoxFor(model => model.Location, new { @class = "large" })
+        @Html.ValidationMessageFor(model => model.Location)
+    </div>
+    <div class="editor-label">
+        @Html.LabelFor(model => model.StartDateTime)
+    </div>
+    <div class="editor-field">
+        @Html.EditorFor(model => model.StartDateTime)
+        @Html.ValidationMessageFor(model => model.StartDateTime)
+    </div>
+    <div class="editor-label">
+        @Html.LabelFor(model => model.DurationDays)
+    </div>
+    <div class="editor-field">
+        @Html.DropDownListFor(model => model.DurationDays, durationDaysSelectList)
+        @Html.ValidationMessageFor(model => model.DurationDays)
+    </div>
+    <div class="editor-label">
+        @Html.LabelFor(model => model.RegistrationUrl)
+    </div>
+    <div class="editor-field">
+        @Html.TextBoxFor(model => model.RegistrationUrl, new { @class = "large" })
+        @Html.ValidationMessageFor(model => model.RegistrationUrl)
+    </div>
+    <div class="editor-label">
+        @Html.LabelFor(model => model.Technology)
+    </div>
+    <div class="editor-field">
+        @Html.TextBoxFor(model => model.Technology, new { @class = "large" })
+        @Html.ValidationMessageFor(model => model.Technology)
+    </div>
+    <div class="editor-label">
+        @Html.LabelFor(model => model.Presenters)
+    </div>
+    <div class="editor-field">
+        @Html.TextBoxFor(model => model.Presenters, new { @class = "large" })
+        @Html.ValidationMessageFor(model => model.Presenters)
+    </div>
+    <div class="editor-label">
+        @Html.LabelFor(model => model.RecordingUrl)
+    </div>
+    <div class="editor-field">
+        @Html.TextBoxFor(model => model.RecordingUrl, new { @class = "large" })
+        @Html.ValidationMessageFor(model => model.RecordingUrl)
+    </div>
+</fieldset>

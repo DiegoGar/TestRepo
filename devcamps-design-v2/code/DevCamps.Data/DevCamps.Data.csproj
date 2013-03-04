@@ -1,0 +1,178 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{13F3784A-7D43-43F4-8FD9-4E005682C724}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>DevCamps.Data</RootNamespace>
+    <AssemblyName>DevCamps.Data</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\EntityFramework.5.0.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Data.Edm, Version=5.0.2.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.Data.Edm.5.0.2\lib\net40\Microsoft.Data.Edm.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Data.OData, Version=5.0.2.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.Data.OData.5.0.2\lib\net40\Microsoft.Data.OData.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.Common">
+      <HintPath>..\packages\EnterpriseLibrary.Common.5.0.505.0\lib\NET35\Microsoft.Practices.EnterpriseLibrary.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.WindowsAzure.TransientFaultHandling">
+      <HintPath>..\packages\EnterpriseLibrary.WindowsAzure.TransientFaultHandling.5.1.1212.0\lib\NET4\Microsoft.Practices.EnterpriseLibrary.WindowsAzure.TransientFaultHandling.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.ServiceLocation">
+      <HintPath>..\packages\CommonServiceLocator.1.0\lib\NET35\Microsoft.Practices.ServiceLocation.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.TransientFaultHandling.Core">
+      <HintPath>..\packages\TransientFaultHandling.Core.5.1.1209.1\lib\NET4\Microsoft.Practices.TransientFaultHandling.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity">
+      <HintPath>..\packages\Unity.2.1.505.2\lib\NET35\Microsoft.Practices.Unity.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity.Configuration">
+      <HintPath>..\packages\Unity.2.1.505.2\lib\NET35\Microsoft.Practices.Unity.Configuration.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity.Interception">
+      <HintPath>..\packages\Unity.Interception.2.1.505.2\lib\NET35\Microsoft.Practices.Unity.Interception.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity.Interception.Configuration">
+      <HintPath>..\packages\Unity.Interception.2.1.505.2\lib\NET35\Microsoft.Practices.Unity.Interception.Configuration.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.WindowsAzure.Configuration, Version=1.8.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.WindowsAzure.ConfigurationManager.1.8.0.0\lib\net35-full\Microsoft.WindowsAzure.Configuration.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.WindowsAzure.Storage, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\WindowsAzure.Storage.2.0.3.0\lib\net40\Microsoft.WindowsAzure.Storage.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Data.Services.Client" />
+    <Reference Include="System.Runtime.Caching" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Spatial, Version=5.0.2.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\System.Spatial.5.0.2\lib\net40\System.Spatial.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Azure\AzureBlobContainer.cs" />
+    <Compile Include="Azure\IBlobContainer.cs" />
+    <Compile Include="EFCodeFirstCacheExtensions\EFCacheExtensions.cs" />
+    <Compile Include="EFCodeFirstCacheExtensions\IEFCacheProvider.cs" />
+    <Compile Include="EFCodeFirstCacheExtensions\MemoryCacheProvider.cs" />
+    <Compile Include="EFCodeFirstCacheExtensions\ObjectQueryExtensions.cs" />
+    <Compile Include="Factory.cs" />
+    <Compile Include="Migrations\201212032325336_InitialCreate.cs" />
+    <Compile Include="Migrations\201212032325336_InitialCreate.Designer.cs">
+      <DependentUpon>201212032325336_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201212272130359_UpdateEventsValidation.cs" />
+    <Compile Include="Migrations\201212272130359_UpdateEventsValidation.Designer.cs">
+      <DependentUpon>201212272130359_UpdateEventsValidation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201212272235170_UpdateInstructorsValidation.cs" />
+    <Compile Include="Migrations\201212272235170_UpdateInstructorsValidation.Designer.cs">
+      <DependentUpon>201212272235170_UpdateInstructorsValidation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201302072016180_AddCampTypeTitleSlug.cs" />
+    <Compile Include="Migrations\201302072016180_AddCampTypeTitleSlug.Designer.cs">
+      <DependentUpon>201302072016180_AddCampTypeTitleSlug.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Migrations\DevCampsConfiguration.cs" />
+    <Compile Include="Models\CampType.cs" />
+    <Compile Include="Models\DevCampsContext.cs" />
+    <Compile Include="Models\DevCampsContextInitializer.cs" />
+    <Compile Include="Models\DevCampsContextToInitialize.cs" />
+    <Compile Include="Models\Event.cs" />
+    <Compile Include="Models\IDevCampsContext.cs" />
+    <Compile Include="Models\Instructor.cs" />
+    <Compile Include="Models\Orchard\BasePart.cs" />
+    <Compile Include="Models\Orchard\BodyPart.cs" />
+    <Compile Include="Models\Orchard\CommonPart.cs" />
+    <Compile Include="Models\Orchard\Data.cs" />
+    <Compile Include="Models\Orchard\EventPart.cs" />
+    <Compile Include="Models\Orchard\EventPart2.cs" />
+    <Compile Include="Models\Orchard\EventPartStartDateTime.cs" />
+    <Compile Include="Models\Orchard\IdentityPart.cs" />
+    <Compile Include="Models\Orchard\InstructorPart.cs" />
+    <Compile Include="Models\Orchard\MediaPickerHeadshotPart.cs" />
+    <Compile Include="Models\Orchard\OrchardExport.cs" />
+    <Compile Include="Models\Orchard\RoutePart.cs" />
+    <Compile Include="Models\Orchard\TagsPart.cs" />
+    <Compile Include="Models\Orchard\TitlePart.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\DevCampsDataService.cs" />
+    <Compile Include="Services\IDevCampsService.cs" />
+    <Compile Include="Services\OrchardImportService.cs" />
+    <Compile Include="TransientFaultHandling\DevCampsContext.cs" />
+    <Compile Include="TransientFaultHandling\EntityFrameworkSqlAzureTransientErrorDetectionStrategy.cs" />
+    <Compile Include="TransientFaultHandling\ReliableSqlAzure.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201212032325336_InitialCreate.resx">
+      <DependentUpon>201212032325336_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201212272130359_UpdateEventsValidation.resx">
+      <DependentUpon>201212272130359_UpdateEventsValidation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201212272235170_UpdateInstructorsValidation.resx">
+      <DependentUpon>201212272235170_UpdateInstructorsValidation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201302072016180_AddCampTypeTitleSlug.resx">
+      <DependentUpon>201302072016180_AddCampTypeTitleSlug.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(SolutionDir)\.nuget\nuget.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

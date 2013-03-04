@@ -1,0 +1,112 @@
+<Project DefaultTargets="RunTests" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+	<PropertyGroup>
+		<ProgramFiles32 Condition="Exists('$(PROGRAMFILES) (x86)')">$(PROGRAMFILES) (x86)</ProgramFiles32>
+		<ProgramFiles32 Condition="$(ProgramFiles32) == ''">$(PROGRAMFILES)</ProgramFiles32>
+		<WorkingDirectory>..</WorkingDirectory>
+		<ToolsPath>C:\build-tools</ToolsPath>
+		<StyleCopPath>$(ToolsPath)\StyleCop</StyleCopPath>
+		<FxCopPath>$(ProgramFiles32)\Microsoft Visual Studio 11.0\Team Tools\Static Analysis Tools\FxCop\FxCopCmd.exe</FxCopPath>
+		<TestResultsPath>TestResults</TestResultsPath>
+		<ExtensionTasksPath>$(ToolsPath)\ExtensionPack</ExtensionTasksPath>
+		<MSTestPath>>$(ProgramFiles32)\Microsoft Visual Studio 10.0\Common7\IDE\MSTEST.EXE</MSTestPath>
+		<SABaseline>0</SABaseline>
+		<CABaseline>10</CABaseline>
+		<CCBaseline>80</CCBaseline>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<SolutionFiles Include="$(WorkingDirectory)\devcamps-design-v2\code\DevCamps.Web.sln"/>
+		<SourceAnalysisSourceCodeFiles Include="$(WorkingDirectory)\**\*.cs" Exclude="$(WorkingDirectory)\devcamps-design-v2\code\DevCamps.Web.Tests\**\*.cs"/>
+		<SourceAnalysisSettingsFile Include="$(WorkingDirectory)\devcamps-design-v2\Settings.StyleCop"/>
+		<Assemblies Include=""/>
+		<RuleSetDirectory Include="$(ProgramFiles32)\Microsoft Visual Studio 11.0\Team Tools\Static Analysis Tools\Rule Sets"/>
+		<ArtifactsToClean Include="StyleCopLog.txt;StyleCopViolations.xml;FxCop.results.xml"/>
+		<TestSettings Include=""/>
+		<TestContainers Include=""/>
+	</ItemGroup>
+	
+	<Target Name="DeleteOldArtifacts">
+		<Delete Files="@(ArtifactsToClean)" />
+		<RemoveDir Directories="$(TestResultsPath)" />
+	</Target>
+	
+	<Target Name="RunSourceAnalysis" DependsOnTargets="DeleteOldArtifacts">
+		<MSBuild.ExtensionPack.CodeQuality.StyleCop
+			TaskAction="Scan"
+				ShowOutput="true"
+				ForceFullAnalysis="true"
+				CacheResults="false"
+				SourceFiles="@(SourceAnalysisSourceCodeFiles)"
+				logFile="StyleCopLog.txt"
+				SettingsFile ="@(SourceAnalysisSettingsFile)"
+				ContinueOnError="false">
+				<Output TaskParameter="Succeeded" PropertyName="AllPassed"/>
+				<Output TaskParameter="ViolationCount" PropertyName="Violations"/>
+				<Output TaskParameter="FailedFiles" ItemName="Failures"/>
+		</MSBuild.ExtensionPack.CodeQuality.StyleCop>
+		<Error Text="Source Analysis Failed. $(Violations) violations encountered." Condition=" $(SABaseline) &lt; $(Violations)  "/>
+		<Message Text="Source Analysis Succeed. $(Violations) violations encountered. Baseline: $(SABaseline) violations." Condition=" $(SABaseline)  &gt; $(Violations) or $(SABaseline) == $(Violations)"/>
+	</Target>
+	
+	<Target Name="Compile" DependsOnTargets="RunSourceAnalysis">
+		<MSBuild Projects="@(SolutionFiles)" Targets="Clean;Build" Properties="Configuration=Debug;DefineConstants=TRACE;DEBUG;CODE_ANALYSIS" />
+	</Target>
+	
+	<Target Name="RunCodeAnalysis" DependsOnTargets="Compile">
+		<MSBuild.ExtensionPack.CodeQuality.FxCop
+			TaskAction="Analyse"
+			Files="@(Assemblies)"
+			OutputFile="FxCop.results.xml"
+			ForceOutput="true"
+			FxCopPath="$(FxCopPath)"
+			SearchGac="true"
+			Verbose="false"
+			RulesetDirectory="@(RuleSetDirectory)"
+			RuleSet="= ManagedMinimumRules.ruleset">
+			<Output TaskParameter="AnalysisFailed" PropertyName="Result" />
+		</MSBuild.ExtensionPack.CodeQuality.FxCop>
+	</Target>
+
+	<Target Name="CheckCodeAnalysisViolations" DependsOnTargets="RunCodeAnalysis">
+		<Message Text="Analyzing Violations" />
+		<CheckCodeAnalysisViolations FxCopResultsFile="FxCop.results.xml" MaxViolationsAllowed="$(CABaseline)" />
+	</Target>
+
+	<Target Name="RunTests" DependsOnTargets="CheckCodeAnalysisViolations">
+		<RunMSTest TestSettings="@(TestSettings)"
+            TestContainers="@(TestContainers)"
+            MSTestPath="$(MSTestPath)"
+		/>
+	</Target>
+	
+
+	<!-- <Target Name="GenerateCodeCoverage" DependsOnTargets="RunTests">
+		<CreateItem Include="$(TestResultsPath)\**\Out\*">
+			<Output TaskParameter="Include" ItemName="ComponentOutputBin" />
+		</CreateItem>
+		<CreateItem Include="$(TestResultsPath)\**\data.coverage">
+			<Output TaskParameter="Include" ItemName="ComponentCoverageData" />
+		</CreateItem>
+  <!--It is required that assemblies and coverage file exists in the same folder-->
+	<Copy SourceFiles="@(ComponentOutputBin)" DestinationFolder="$(TestResultsPath)\" />
+	<Copy SourceFiles="@(ComponentCoverageData)" DestinationFolder="$(TestResultsPath)\" />
+
+		<CheckCodeCoverage CoverageDataFile="@(ComponentCoverageData)"
+                       BinariesPath="$(TestResultsPath)\"
+                       OutFile="$(TestResultsPath)\CodeCoverage.xml"
+                       MinCoverage="$(CCBaseline)"
+												 />
+
+		<XslTransformation
+			XmlInputPaths="$(TestResultsPath)\CodeCoverage.xml"
+			OutputPaths="$(TestResultsPath)\CodeCoverage.html"
+			XslInputPath="$(ToolsPath)\Southworks\MsTestCoverageSummary.xslt" />
+	</Target> -->
+
+
+	<UsingTask AssemblyFile="$(StyleCopPath)\MSBuild.ExtensionPack.StyleCop.dll" TaskName="MSBuild.ExtensionPack.CodeQuality.StyleCop"/>
+	<UsingTask AssemblyFile="$(ExtensionTasksPath)\MSBuild.ExtensionPack.dll" TaskName="MSBuild.ExtensionPack.CodeQuality.FxCop"/>
+	<UsingTask AssemblyFile="$(ToolsPath)\Southworks\Southworks.BuildTools.dll" TaskName="Southworks.BuildTools.CodeAnalysis.CheckCodeAnalysisViolations"/>
+	<UsingTask AssemblyFile="$(ToolsPath)\Southworks\Southworks.BuildTools.dll" TaskName="Southworks.BuildTools.Test.RunMSTest"/>
+	<UsingTask AssemblyFile="$(ToolsPath)\Southworks\Southworks.BuildTools.dll" TaskName="Southworks.BuildTools.CodeCoverage.CheckCodeCoverage"/>
+</Project>

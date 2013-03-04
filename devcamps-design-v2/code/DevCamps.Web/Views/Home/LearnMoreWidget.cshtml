@@ -1,0 +1,22 @@
+﻿@model IEnumerable<DevCamps.Data.Models.CampType>
+@{
+    var section = this.ViewData["section"] ?? string.Empty;
+    var isFooter=section == "footer";
+    var ulCssClass = "unstyled";
+    if (isFooter)
+    {
+        ulCssClass += " clearfix";
+    }
+}
+@if (isFooter)
+{
+    <h3>Learn More</h3>}
+else
+{
+    <h1>Learn More</h1>}
+<ul class="@ulCssClass">
+    @foreach (var campType in Model.OrderBy(c=>c.Order))
+    {
+        <li><a href="/@campType.Slug">@campType.Title Camps</a></li>
+    }
+</ul>

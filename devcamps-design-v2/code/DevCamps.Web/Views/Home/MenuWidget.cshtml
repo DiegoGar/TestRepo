@@ -1,0 +1,9 @@
+﻿@model IEnumerable<DevCamps.Data.Models.CampType>
+<nav class="top">
+    <ul class="unstyled horizontal clearfix">
+        @foreach (var campType in Model.OrderBy(c => c.Order))
+        {
+            <li><a href="/@campType.Slug">@campType.Title</a></li>
+        }
+    </ul>
+</nav>

@@ -1,0 +1,55 @@
+﻿@model IEnumerable<DevCamps.Data.Models.CampType>
+@{
+    ViewBag.Title = "Microsoft Dev Camps";
+    ViewBag.BodyCssClass = "home";
+    ViewBag.CampTypes = Model;
+}
+@section styles{
+    @Styles.Render("~/content/themes/DevCamps/styles/home.css")
+}
+@section header{
+    <section class="row-fluid hero">
+        <div class="span9 bleed">
+
+            <div class="hero-slideshow">
+                @Html.Partial(@"Content\Home\FeaturedItemsSlider")
+                <div class="hero-slideshow-paging"></div>
+            </div>
+        </div>
+
+        <div class="span3 sidebar">
+            <nav class="top">
+                @Html.Partial(@"LearnMoreWidget",
+                    (IEnumerable<DevCamps.Data.Models.CampType>)ViewBag.CampTypes,
+                    new ViewDataDictionary { { "section", "header" } })
+            </nav>
+
+        </div>
+    </section>
+}
+
+<div class="wrap">
+    <section class="row-fluid schedule">
+        <div class="span12">
+            @Html.Partial(@"ScheduleWidget")
+        </div>
+    </section>
+
+    <section class="videos lower">
+        <div class="row-fluid">
+            <div class="span9">
+                @Html.Partial(@"Content\Home\Videos")
+            </div>
+
+            <div class="span3">
+                <aside class="sidebar">
+                    @Html.Partial(@"Content\Home\RecommendedBlogs")
+                </aside>
+
+                <aside class="sidebar">
+                    @Html.Partial(@"Content\Home\AppOfTheMonth")
+                </aside>
+            </div>
+        </div>
+    </section>
+</div>

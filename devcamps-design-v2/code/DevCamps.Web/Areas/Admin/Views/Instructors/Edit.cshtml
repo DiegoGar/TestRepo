@@ -1,0 +1,17 @@
+﻿@model DevCamps.Web.Areas.Admin.Models.InstructorViewModel
+
+@{
+    ViewBag.Title = "Edit";
+}
+<section class="admin events">
+    <div class="editor bg-1">
+        <h2>Edit Instructor</h2>
+        @using (Html.BeginForm(ViewContext.Controller.ValueProvider.GetValue("action").RawValue.ToString(), ViewContext.Controller.ValueProvider.GetValue("controller").RawValue.ToString(), FormMethod.Post, new { Id = "uploadForm", Enctype = "multipart/form-data" }))
+        {
+            @Html.EditorForModel();
+        }
+    </div>
+</section>
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

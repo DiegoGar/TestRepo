@@ -1,0 +1,116 @@
+﻿@using System.Linq;
+@model DevCamps.Web.Areas.Admin.Models.EventsIndexModel
+
+@{
+    ViewBag.Title = "Administration - Events";
+}
+<section class="admin">
+    <div class="table bg-1">
+        @using (Html.BeginForm("Index", "Events", FormMethod.Get, new object { }))
+        {
+            <h2>Events</h2>
+
+            <div class="table-filter">
+                <div class="filter-label column">
+                    @Html.LabelFor(model => model.CampTypeId, "CampType")
+                </div>
+                <div class="filter-field column">
+                    @Html.DropDownList("CampTypeId", string.Empty)
+                </div>
+                <div class="filter-label column">
+                    @Html.LabelFor(model => model.SearchTerms, "SearchTerms")
+                </div>
+                <div class="filter-field column">
+                    @Html.TextBoxFor(model => model.SearchTerms, new { @class = "water searchterms", title = "enter a state (WA), province (ON) or country…" })
+                </div>
+                <div class="column">
+                    <a id="create-button" href="@Url.Action("Create")">
+                        <div class="button">
+                            <p>New Event</p>
+                        </div>
+                    </a>
+                </div>
+                <div class="column">
+                    <input type="submit" class="button" value="Search" />
+                </div>
+            </div>
+
+            <table class="display dataTable">
+                <thead>
+                    <tr>
+                        <th>Location
+                        </th>
+                        <th>Date
+                        </th>
+                        <th>Technology
+                        </th>
+                        <th>Registration
+                        </th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model.Events)
+                    {
+                        @Html.DisplayFor(modelItem => item, "EventRow")
+                    }
+                </tbody>
+            </table>
+                    if (Model.PageCount > 1)
+                    {
+            <div class="events-pager">
+                <div class="pager-footer">
+                    <ul class="group pager">
+                        @if (Model.PageCurrent > 2)
+                        {
+                            <li class="page-first">
+                                @Html.ActionLink("<<", "Index", new { page = 1, campTypeId = Model.CampTypeId, pageSize = Model.PageSize, searchTerms = Model.SearchTerms })
+                            </li>
+                        }
+                        @if (Model.PageCurrent > 1)
+                        {
+                            <li class="page-previous">
+                                @Html.ActionLink("<", "Index", new { page = Model.PageCurrent - 1, campTypeId = Model.CampTypeId, pageSize = Model.PageSize, searchTerms = Model.SearchTerms })
+                            </li>
+                        }
+                        @{
+                        int windowSize = 5;
+                        int pageWindow = Math.Min(Model.PageCount, windowSize);
+                        int pagerCenter = (pageWindow + 1) / 2;
+                        var initialPage = Math.Min(Math.Max(Model.PageCurrent - pagerCenter, 0), Model.PageCount - pageWindow);
+                        }
+                        @for (int i = initialPage + 1; i < initialPage + pageWindow + 1; i++)
+                        {
+                            <li class="page-@i">
+                                @if (i != Model.PageCurrent)
+                                {
+                                    @Html.ActionLink(i.ToString(), "Index", new { page = i, campTypeId = Model.CampTypeId, pageSize = Model.PageSize, searchTerms = Model.SearchTerms });
+                                }
+                                else
+                                {
+                                    <span>@i</span>
+                                }
+                            </li>
+                        }
+                        @if (Model.PageCurrent < Model.PageCount)
+                        {
+                            <li class="page-next">
+                                @Html.ActionLink(">", "Index", new { page = Model.PageCurrent + 1, campTypeId = Model.CampTypeId, pageSize = Model.PageSize, searchTerms = Model.SearchTerms })
+                            </li>
+                        }
+                        @if (Model.PageCurrent < Model.PageCount - 1)
+                        {
+                            <li class="page-last">
+                                @Html.ActionLink(">>", "Index", new { page = Model.PageCount, campTypeId = Model.CampTypeId, pageSize = Model.PageSize, searchTerms = Model.SearchTerms })
+                            </li>
+                        }
+                    </ul>
+                    <div class="clear" />
+                </div>
+
+            </div>
+                    }
+        }
+    </div>
+    
+</section>

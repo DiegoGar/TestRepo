@@ -1,0 +1,46 @@
+﻿@model DevCamps.Web.Models.LandingViewModel
+@{
+    ViewBag.Title = "Microsoft DevCamps";
+    ViewBag.BodyCssClass = "interior";
+    ViewBag.CampTypes = Model.CampTypes;
+    ViewBag.CampType = Model.CampType;
+    ViewBag.ContactEmail = Model.CampType.ContactEmail;
+}
+@section styles{
+    @Styles.Render("~/content/themes/DevCamps/styles/interior.css")
+}
+<div class="wrap">
+    <section class="row-fluid hero">
+        <div class="span9 bleed">
+
+            <div class="hero-slideshow">
+                @Html.Partial(@"Content\Landing\FeaturedItemsSlider")
+                <div class="hero-slideshow-paging"></div>
+            </div>
+        </div>
+
+        <div class="span3 sidebar">
+            @Html.Partial(@"Content\Landing\CampDescription")
+        </div>
+    </section>
+    <!--Schedule-->
+    <section class="row-fluid schedule">
+        <div class="span12">
+            @Html.Partial(@"ScheduleWidget")
+        </div>
+    </section>
+    <!--End Schedule-->
+    <!--Agenda and Instructors-->
+    <section class="agenda lower row-fluid">
+        @Html.Partial(@"Content\Landing\Agenda")
+
+        @Html.Action("Instructors", new { campType = Model.CampType.CampTypeId })
+    </section>
+    <!--End Agenda and Instructors-->
+    <section class="faq lower row-fluid">
+        @Html.Partial(@"Content\Landing\FAQ")
+
+        @Html.Partial(@"Content\Landing\Downloads")
+    </section>
+    <!--FAQ and Downloads-->
+</div>

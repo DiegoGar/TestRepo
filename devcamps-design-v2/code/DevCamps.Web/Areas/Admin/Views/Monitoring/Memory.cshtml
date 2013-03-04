@@ -1,0 +1,223 @@
+﻿@{
+    ViewBag.Title = "Memory Information";
+}
+
+@using System.Diagnostics;
+<!DOCTYPE html>
+<html>
+<head>
+    <title>ASP.NET MVC Monitoring</title>
+
+    <style>
+        ul, li {
+            margin-left: 20px;
+            padding: 2px;
+            border: 0;
+            font-weight: inherit;
+            font-style: inherit;
+            font-size: 100%;
+            font-family: inherit;
+            vertical-align: baseline;
+            list-style: disc;
+        }
+
+        h1, h2 {
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-top: 30px;
+        }
+
+        h1 {
+            font-weight: bold;
+            font-size: 2em;
+            line-height: 36px;
+            margin-bottom: 15px;
+        }
+
+        h2 {
+            font-size: 1.3em;
+            line-height: 2em;
+            font-weight: bold;
+            text-align: left;
+        }
+
+        div.content {
+            margin-left: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div id="wrapper">
+        <div class="content">
+            <header>
+                <h1>ASP.NET MVC Monitoring - @ViewBag.Title</h1>
+                <p>
+                    This page shows you the resource memory consumption by your application as exposed through the AppDomain. 
+                    It also shows the current values of several performance counters related to memory usage and ASP.NET Caching stats.
+                </p>
+            </header>
+            <div>
+                <section id="content">
+                    <article>
+                        <h2>Memory and CPU Consumption</h2>
+                        <p class="container">
+                            <ul>
+                                <li><b>Machine Name:</b> @System.Environment.MachineName</li>
+                                <li><b title="Total size, in bytes, of all memory allocations that have been made by the application domain since it was created, without subtracting memory that has been collected.">Total Bytes Allocated:</b> @AppDomain.CurrentDomain.MonitoringTotalAllocatedMemorySize Bytes</li>
+                                <li><b title="Total size of all memory allocations that have been made by the application domain since it was created, without subtracting memory that has been collected.">Total MB Allocated:</b> @(AppDomain.CurrentDomain.MonitoringTotalAllocatedMemorySize / 1024 / 1024) MB</li>
+                                <li><b title="The number of bytes that survived the last full, blocking collection and that are known to be referenced by the current application domain.">Total Bytes In Use:</b> @AppDomain.CurrentDomain.MonitoringSurvivedMemorySize Bytes</li>
+                                <li><b title="The number of bytes that survived the last full, blocking collection and that are known to be referenced by the current application domain.">Total MB In Use:</b> @(AppDomain.CurrentDomain.MonitoringSurvivedMemorySize / 1024 / 1024) MB</li>
+                                <li><b>Number of entries in OutputCache:</b> @GetOutputCacheNumberOfEntries()</li>
+                                <li><b title="The number of bytes that can be used by the application process. Once this limit is reached, the cache algorithm begins aggressively scavenging the cache.">Cache Effective Private Bytes Limit:</b> @(HttpRuntime.Cache.EffectivePrivateBytesLimit) Bytes</li>
+                                <li><b title="The number of bytes that can be used by the application process. Once this limit is reached, the cache algorithm begins aggressively scavenging the cache.">Cache Effective Private Bytes Limit in MB:</b> @(HttpRuntime.Cache.EffectivePrivateBytesLimit / 1024 / 1024) MB</li>
+                                <li><b title="Total processor time that has been used by all threads while executing in the current application domain, since the process started.">CPU usage:</b> @AppDomain.CurrentDomain.MonitoringTotalProcessorTime.Milliseconds Milliseconds</li>
+                                <li><b title="Total processor time that has been used by all threads while executing in the current application domain, since the process started.">CPU usage:</b> @(AppDomain.CurrentDomain.MonitoringTotalProcessorTime.Milliseconds / 1000) Seconds</li>
+                            </ul>
+                        </p>
+                    </article>
+
+                    @{ 
+                        var allCategories = PerformanceCounterCategory.GetCategories();
+                        var aspNetAppsCategories = allCategories.Where(c => c.CategoryName.StartsWith("ASP.NET Apps", StringComparison.OrdinalIgnoreCase));
+                        var memoryCategories = allCategories.Where(c => c.CategoryName == "Memory");
+                        var perfCats = aspNetAppsCategories.OrderByDescending(c => c.CategoryName).Union(memoryCategories);
+                        if (perfCats.Count() == 0)
+                        {
+                        <article>
+                            <h2>Debug All Categories (@allCategories.Count())</h2>
+                            <ul>
+                                @foreach (PerformanceCounterCategory category in allCategories)
+                                {
+                                    <li>Category Name: @category.CategoryName</li>}
+                            </ul>
+                        </article>
+                        }
+                        else
+                        {
+                        <article>
+                            <h2>@ViewBag.Title</h2>
+                            <ul>
+
+                                @foreach (PerformanceCounterCategory category in perfCats)
+                                {
+                                    <li>Category Name: @category.CategoryName
+                                        <ul>
+                                            @{
+                                    //Get all instances available for category
+                                    string[] instances = category.GetInstanceNames();
+                                    if (instances.Length == 0)
+                                    {
+                                        //This block will execute when category has no instance.
+                                        //loop all the counters available withing category
+                                        foreach (PerformanceCounter counter in category.GetCounters())
+                                        {
+                                            float value;
+                                            using (PerformanceCounter perfCounter = new PerformanceCounter(category.CategoryName, counter.CounterName))
+                                            {
+                                                value = perfCounter.NextValue();
+                                            }
+                                            
+                                                <li>Counter Name: @counter.CounterName   -   Value: @value</li>                                            
+                                        }
+                                    }
+                                    else
+                                    {
+                                        //This block will execute when category has one or more instances.
+                                        foreach (string instance in instances)
+                                        {
+                                                <li>Instance Name: @instance
+                                                    <ul>
+
+                                                        @{//loop all the counters available withing category
+                                            foreach (PerformanceCounter counter in category.GetCounters(instances[0]))
+                                            {
+                                                float value;
+                                                using (PerformanceCounter perfCounter = new PerformanceCounter(category.CategoryName, counter.CounterName, instances[0]))
+                                                {
+                                                    value = perfCounter.NextValue();
+                                                }
+                                        
+                                                            <li>Counter Name: @counter.CounterName   -   Value: @value</li>
+                                            }
+                                                        }
+                                                    </ul>
+                                                </li>
+                                        }
+
+                                    }
+                                
+                                            }
+                                        </ul>
+                                    </li>
+                                }
+                            </ul>
+
+                        </article>
+                        }
+                    }
+                </section>
+            </div>
+        </div>
+        <footer>
+        </footer>
+    </div>
+</body>
+</html>
+
+@using System.Reflection;
+@functions{
+    public string GetOutputCacheNumberOfEntries()
+    {
+        try
+        {
+            Type runtimeType = typeof(HttpRuntime);
+
+            PropertyInfo ci = runtimeType.GetProperty("CacheInternal", BindingFlags.NonPublic | BindingFlags.Static);
+            if (ci == null)
+            {
+                return "{Error: static private HttpRuntime.CacheInternal property info (Reflection) not found}";
+            }
+
+            Object cache = ci.GetValue(ci, new object[0]);
+            if (cache == null)
+            {
+                return "{Error: static private HttpRuntime.CacheInternal value returned null}";
+            }
+
+            object cacheEntries = null;
+            FieldInfo cachesInfo = cache.GetType().GetField("_caches", BindingFlags.NonPublic | BindingFlags.Instance);
+            if (cachesInfo == null)
+            {
+                cacheEntries = new object[] { cache };
+            }
+            else
+            {
+                cacheEntries = cachesInfo.GetValue(cache);
+            }
+
+            List<object> outputCacheEntries = new List<object>();
+
+            foreach (Object singleCache in cacheEntries as Array)
+            {
+                FieldInfo singleCacheInfo = singleCache.GetType().GetField("_entries", BindingFlags.NonPublic | BindingFlags.Instance);
+                object entries = singleCacheInfo.GetValue(singleCache);
+
+                foreach (System.Collections.DictionaryEntry cacheEntry in entries as System.Collections.Hashtable)
+                {
+                    FieldInfo cacheEntryInfo = cacheEntry.Value.GetType().GetField("_value", BindingFlags.NonPublic | BindingFlags.Instance);
+                    object value = cacheEntryInfo.GetValue(cacheEntry.Value);
+                    if (value.GetType().Name == "CachedRawResponse")
+                    {
+                        outputCacheEntries.Add(value);
+                    }
+                }
+            }
+
+            return outputCacheEntries.Count.ToString();
+        }
+        catch
+        {
+            return "N/A";
+        }
+    }    
+}

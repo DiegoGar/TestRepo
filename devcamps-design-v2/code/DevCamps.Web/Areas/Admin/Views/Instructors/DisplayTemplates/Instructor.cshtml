@@ -1,0 +1,40 @@
+﻿@model DevCamps.Data.Models.Instructor
+
+<fieldset>
+    <legend>Instructor</legend>
+
+    <div class="display-label">
+         @Html.LabelFor(model => model.CampTypeId)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.CampTypeId)
+    </div>
+
+    <div class="display-label">
+         @Html.LabelFor(model => model.Name)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Name)
+    </div>
+
+    <div class="display-label">
+         @Html.LabelFor(model => model.Title)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Title)
+    </div>
+
+    <div class="display-label">
+         @Html.LabelFor(model => model.Biography)
+    </div>
+    <div class="display-field">
+        @Html.Raw(Model.Biography)
+    </div>
+
+    <div class="display-label">
+         @Html.LabelFor(model => model.PictureUrl)
+    </div>
+    <div class="display-field">
+        <img src="@Model.PictureUrl" alt="@Model.PictureUrl" title="@Model.PictureUrl" />
+    </div>
+</fieldset>

@@ -1,0 +1,17 @@
+﻿@model DevCamps.Data.Models.Instructor
+<tr>
+    <td>
+        @Html.DisplayFor(model => model.Title)
+    </td>
+    <td>
+        @Html.DisplayFor(model => model.Name)
+    </td>
+
+    <td>
+        <div class="action-icons">
+            @Html.ActionLink("Edit", "Edit", new { id = Model.InstructorId }, new { @class = "ui-icon ui-icon-pencil", title = "Edit" })
+            @Html.ActionLink("Details", "Details", new { id = Model.InstructorId }, new { @class = "ui-icon ui-icon-search", title = "View Details" })
+            @Html.ActionLink("Delete", "Delete", new { id = Model.InstructorId }, new { @class = "ui-icon ui-icon-closethick", title = "Delete" })
+        </div>
+    </td>
+</tr>

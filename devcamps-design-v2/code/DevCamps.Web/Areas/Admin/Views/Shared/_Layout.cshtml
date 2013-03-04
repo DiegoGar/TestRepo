@@ -1,0 +1,43 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="content-type" content="text/html;charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>@ViewBag.Title</title>
+    <link href="~/Content/Themes/Admin/images/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+
+    @Styles.Render("~/content/themes/Admin/css")
+    <!-- begin: typekit embed code -->
+    <script type="text/javascript" src="http://use.typekit.com/lzk1eig.js"></script>
+    <script type="text/javascript">try { Typekit.load(); } catch (e) { }</script>
+    <!-- end: typekit embed code -->
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/jqueryui")
+    @Scripts.Render("~/bundles/Admin")
+</head>
+<body class="admin">
+    <h1 class="hidden-page-header">@ViewBag.Title</h1>
+    <div id="camp_wrapper">
+        <div id="content">
+            <header>
+                <nav>
+                    <a href="/" class="home-nav">
+                        <div id="mainLogo" class="logo-image">
+                        </div>
+                    </a>
+                    @if (Request.IsAuthenticated && User.IsInRole("Administrators"))
+                    {
+                        <ul>
+                            <li>@Html.ActionLink("Events", "Index", "Events")</li>
+                            <li>@Html.ActionLink("Instructors", "Index", "Instructors")</li>
+                        </ul>}
+                </nav>
+            </header>
+            @RenderBody()
+        </div>
+    </div>
+    @RenderSection("scripts", required: false)
+</body>
+</html>
