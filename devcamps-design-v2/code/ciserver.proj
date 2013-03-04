@@ -87,7 +87,7 @@
 		<CreateItem Include="$(TestResultsPath)\**\data.coverage">
 			<Output TaskParameter="Include" ItemName="ComponentCoverageData" />
 		</CreateItem>
-  <!-- It is required that assemblies and coverage file exists in the same folder -->
+  
 	<Copy SourceFiles="@(ComponentOutputBin)" DestinationFolder="$(TestResultsPath)\" />
 	<Copy SourceFiles="@(ComponentCoverageData)" DestinationFolder="$(TestResultsPath)\" />
 
