@@ -21,8 +21,8 @@
 		<!-- <Assemblies Include=""/> -->
 		<RuleSetDirectory Include="$(ProgramFiles32)\Microsoft Visual Studio 11.0\Team Tools\Static Analysis Tools\Rule Sets"/>
 		<ArtifactsToClean Include="StyleCopLog.txt;StyleCopViolations.xml;FxCop.results.xml"/>
-		<TestSettings Include=""/>
-		<TestContainers Include=""/>
+		<!-- <TestSettings Include=""/> -->
+		<!-- <TestContainers Include=""/> -->
 	</ItemGroup>
 	
 	<Target Name="DeleteOldArtifacts">
