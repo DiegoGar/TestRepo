@@ -9,7 +9,7 @@
 		<TestResultsPath>TestResults</TestResultsPath>
 		<ExtensionTasksPath>$(ToolsPath)\ExtensionPack</ExtensionTasksPath>
 		<MSTestPath>>$(ProgramFiles32)\Microsoft Visual Studio 10.0\Common7\IDE\MSTEST.EXE</MSTestPath>
-		<SABaseline>0</SABaseline>
+		<SABaseline>4</SABaseline>
 		<CABaseline>10</CABaseline>
 		<CCBaseline>80</CCBaseline>
 	</PropertyGroup>
