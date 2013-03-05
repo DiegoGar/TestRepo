@@ -31,7 +31,7 @@
 	</Target>
 	
 	<Target Name="RunSourceAnalysis" DependsOnTargets="DeleteOldArtifacts">
-		<MSBuild.ExtensionPack.CodeQuality.StyleCop
+		<MSBuild.ExtensionPack.CodeQuality.StyleCop>
 			TaskAction="Scan"
 				ShowOutput="true"
 				ForceFullAnalysis="true"
