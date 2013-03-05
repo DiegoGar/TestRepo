@@ -80,7 +80,7 @@
 	</Target>
 	
 
-	<!-- <Target Name="GenerateCodeCoverage" DependsOnTargets="RunTests">
+	<!-- <Target Name="GenerateCodeCoverage" DependsOnTargets="RunTests"> -->
 		<CreateItem Include="$(TestResultsPath)\**\Out\*">
 			<Output TaskParameter="Include" ItemName="ComponentOutputBin" />
 		</CreateItem>
