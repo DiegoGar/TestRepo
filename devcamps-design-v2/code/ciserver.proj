@@ -2,7 +2,7 @@
 	<PropertyGroup>
 		<ProgramFiles32 Condition="Exists('$(PROGRAMFILES) (x86)')">$(PROGRAMFILES) (x86)</ProgramFiles32>
 		<ProgramFiles32 Condition="$(ProgramFiles32) == ''">$(PROGRAMFILES)</ProgramFiles32>
-		<WorkingDirectory>https://github.com/DiegoGar/TestRepo/tree/master/devcamps-design-v2/code</WorkingDirectory>
+		<WorkingDirectory>..</WorkingDirectory>
 		<ToolsPath>C:\build-tools</ToolsPath>
 		<StyleCopPath>$(ToolsPath)\StyleCop</StyleCopPath>
 		<FxCopPath>$(ProgramFiles32)\Microsoft Visual Studio 11.0\Team Tools\Static Analysis Tools\FxCop\FxCopCmd.exe</FxCopPath>
@@ -15,9 +15,9 @@
 	</PropertyGroup>
 
 	<ItemGroup>
-		<SolutionFiles Include="$(WorkingDirectory)\DevCamps.Web.sln"/>
-		<SourceAnalysisSourceCodeFiles Include="$(WorkingDirectory)\**\*.cs" Exclude="$(WorkingDirectory)\DevCamps.Web.Tests\**\*.cs"/>
-		<SourceAnalysisSettingsFile Include="$(WorkingDirectory)\Settings.StyleCop"/>
+		<SolutionFiles Include="$(WorkingDirectory)\devcamps-design-v2\code\DevCamps.Web.sln"/>
+		<SourceAnalysisSourceCodeFiles Include="$(WorkingDirectory)\**\*.cs" Exclude="$(WorkingDirectory)\devcamps-design-v2\code\DevCamps.Web.Tests\**\*.cs"/>
+		<SourceAnalysisSettingsFile Include="$(WorkingDirectory)\devcamps-design-v2\code\Settings.StyleCop"/>
 		<!-- <Assemblies Include=""/> -->
 		<RuleSetDirectory Include="$(ProgramFiles32)\Microsoft Visual Studio 11.0\Team Tools\Static Analysis Tools\Rule Sets"/>
 		<ArtifactsToClean Include="StyleCopLog.txt;StyleCopViolations.xml;FxCop.results.xml"/>
