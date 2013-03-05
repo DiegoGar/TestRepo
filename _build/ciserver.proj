@@ -2,7 +2,7 @@
 	<PropertyGroup>
 		<ProgramFiles32 Condition="Exists('$(PROGRAMFILES) (x86)')">$(PROGRAMFILES) (x86)</ProgramFiles32>
 		<ProgramFiles32 Condition="$(ProgramFiles32) == ''">$(PROGRAMFILES)</ProgramFiles32>
-		<WorkingDirectory>..</WorkingDirectory>
+		<WorkingDirectory>..\devcamps-design-v2\code</WorkingDirectory>
 		<ToolsPath>C:\build-tools</ToolsPath>
 		<StyleCopPath>$(ToolsPath)\StyleCop</StyleCopPath>
 		<FxCopPath>$(ProgramFiles32)\Microsoft Visual Studio 11.0\Team Tools\Static Analysis Tools\FxCop\FxCopCmd.exe</FxCopPath>
