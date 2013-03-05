@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<TestSettings name="TestSettings1" id="3dc4ec05-9dd3-4ca5-9096-68f28a25f09b" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <Description>These are default test settings for a local test run.</Description>
+  <Execution>
+    <TestTypeSpecific>
+      <UnitTestRunConfig testTypeId="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b">
+        <AssemblyResolution>
+          <TestDirectory useLoadContext="true" />
+        </AssemblyResolution>
+      </UnitTestRunConfig>
+    </TestTypeSpecific>
+    <AgentRule name="LocalMachineDefaultRole">
+      <DataCollectors>
+        <DataCollector uri="datacollector://microsoft/CodeCoverage/1.0" assemblyQualifiedName="Microsoft.VisualStudio.TestTools.CodeCoverage.CoveragePlugIn, Microsoft.VisualStudio.QualityTools.Plugins.CodeCoverage, Version=11.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" friendlyName="Code Coverage (Visual Studio 2010)">
+          <Configuration>
+            <CodeCoverage xmlns="">
+              <Regular>
+                <CodeCoverageItem binaryFile="DevCamps.Data\bin\Debug\DevCamps.Data.dll" pdbFile="DevCamps.Data\bin\Debug\DevCamps.Data.pdb" instrumentInPlace="true" />
+              </Regular>
+              <AspNet>
+                <AspNetCodeCoverageItem id="2b4c826b-2ec8-41a3-a857-b7ff70f5a424" name="DevCamps.Web" url="http://localhost:50907/" isIis="true" />
+              </AspNet>
+            </CodeCoverage>
+          </Configuration>
+        </DataCollector>
+      </DataCollectors>
+    </AgentRule>
+  </Execution>
+</TestSettings>
