@@ -15,8 +15,8 @@
 	</PropertyGroup>
 
 	<ItemGroup>
-		<SolutionFiles Include="$(WorkingDirectory)\devcamps-design-v2\code\DevCamps.Web.sln"/>
-		<SourceAnalysisSourceCodeFiles Include="$(WorkingDirectory)\**\*.cs" Exclude="$(WorkingDirectory)\devcamps-design-v2\code\DevCamps.Web.Tests\**\*.cs"/>
+		<SolutionFiles Include="$(WorkingDirectory)\code\DevCamps.Web.sln"/>
+		<SourceAnalysisSourceCodeFiles Include="$(WorkingDirectory)\**\*.cs" Exclude="$(WorkingDirectory)\code\DevCamps.Web.Tests\**\*.cs"/>
 		<SourceAnalysisSettingsFile Include="$(WorkingDirectory)\code\Settings.StyleCop"/>
 		<!-- <Assemblies Include=""/> -->
 		<RuleSetDirectory Include="$(ProgramFiles32)\Microsoft Visual Studio 11.0\Team Tools\Static Analysis Tools\Rule Sets"/>
