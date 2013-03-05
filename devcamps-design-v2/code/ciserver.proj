@@ -18,11 +18,11 @@
 		<SolutionFiles Include="$(WorkingDirectory)\code\DevCamps.Web.sln"/>
 		<SourceAnalysisSourceCodeFiles Include="$(WorkingDirectory)\**\*.cs" Exclude="$(WorkingDirectory)\code\DevCamps.Web.Tests\**\*.cs"/>
 		<SourceAnalysisSettingsFile Include="$(WorkingDirectory)\code\Settings.StyleCop"/>
-		<Assemblies Include="$(WorkingDirectory)\DevCamps.Data\bin\Debug\DevCamps.Data.dll;&(WorkingDirectory)\DevCamps.Web\bin\DevCamps.Web.dll"/>
+		<Assemblies Include="$(WorkingDirectory)\DevCamps.Data\bin\Debug\DevCamps.Data.dll;$(WorkingDirectory)\DevCamps.Web\bin\DevCamps.Web.dll"/>
 		<RuleSetDirectory Include="$(ProgramFiles32)\Microsoft Visual Studio 11.0\Team Tools\Static Analysis Tools\Rule Sets"/>
 		<ArtifactsToClean Include="StyleCopLog.txt;StyleCopViolations.xml;FxCop.results.xml"/>
 		<TestSettings Include="$(WrokingDirectory)\TestSettings1.testsettings"/>
-		<TestContainers Include="&(WorkingDirectory)\DevCamps.Data.Tests\bin\Debug\DevCamps.Data.Tests.dll;$(WorkingDirectory)\DevCamps.Web.Tests\bin\Debug\DevCamps.Web.Tests.dll"/>
+		<TestContainers Include="$(WorkingDirectory)\DevCamps.Data.Tests\bin\Debug\DevCamps.Data.Tests.dll;$(WorkingDirectory)\DevCamps.Web.Tests\bin\Debug\DevCamps.Web.Tests.dll"/>
 	</ItemGroup>
 	
 	<Target Name="DeleteOldArtifacts">
