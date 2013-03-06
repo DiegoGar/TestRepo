@@ -8,7 +8,7 @@
 		<FxCopPath>$(ProgramFiles32)\Microsoft Visual Studio 11.0\Team Tools\Static Analysis Tools\FxCop\FxCopCmd.exe</FxCopPath>
 		<TestResultsPath>TestResults</TestResultsPath>
 		<ExtensionTasksPath>$(ToolsPath)\ExtensionPack</ExtensionTasksPath>
-		<MSTestPath>$(ProgramFiles32)\Microsoft Visual Studio 11.0\Common7\IDE\MSTEST.EXE</MSTestPath>
+		<VSTest2012Path>VSTest.Console.exe</VSTest2012Path>
 		<SABaseline>4</SABaseline>
 		<CABaseline>10</CABaseline>
 		<CCBaseline>80</CCBaseline>
@@ -74,9 +74,9 @@
 	</Target>
 
 	<Target Name="RunTests" DependsOnTargets="CheckCodeAnalysisViolations">
-		<RunMSTest TestSettings="@(TestSettings)"
+		<RunVSTest2012 TestSettings="@(TestSettings)"
             TestContainers="@(TestContainers)"
-            MSTestPath="$(MSTestPath)"
+            VSTest2012Path="$(VSTest2012Path)"
 		/>
 	</Target>
 	
@@ -108,6 +108,6 @@
 	<UsingTask AssemblyFile="$(StyleCopPath)\MSBuild.ExtensionPack.StyleCop.dll" TaskName="MSBuild.ExtensionPack.CodeQuality.StyleCop"/>
 	<UsingTask AssemblyFile="$(ExtensionTasksPath)\MSBuild.ExtensionPack.dll" TaskName="MSBuild.ExtensionPack.CodeQuality.FxCop"/>
 	<UsingTask AssemblyFile="$(ToolsPath)\Southworks\Southworks.BuildTools.dll" TaskName="Southworks.BuildTools.CodeAnalysis.CheckCodeAnalysisViolations"/>
-	<UsingTask AssemblyFile="$(ToolsPath)\Southworks\Southworks.BuildTools.dll" TaskName="Southworks.BuildTools.Test.RunMSTest"/>
+	<UsingTask AssemblyFile="$(ToolsPath)\Southworks\Southworks.BuildTools.dll" TaskName="Southworks.BuildTools.Test.RunVSTest2012"/>
 	<UsingTask AssemblyFile="$(ToolsPath)\Southworks\Southworks.BuildTools.dll" TaskName="Southworks.BuildTools.CodeCoverage.CheckCodeCoverage"/>
 </Project>
