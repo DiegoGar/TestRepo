@@ -8,7 +8,7 @@
 		<FxCopPath>$(ProgramFiles32)\Microsoft Visual Studio 11.0\Team Tools\Static Analysis Tools\FxCop\FxCopCmd.exe</FxCopPath>
 		<TestResultsPath>TestResults</TestResultsPath>
 		<ExtensionTasksPath>$(ToolsPath)\ExtensionPack</ExtensionTasksPath>
-		<VSTest2012Path>VSTest.Console.exe</VSTest2012Path>
+		<VSTest2012Path>C:\Program Files (x86)\Microsoft Visual Studio 11.0\Common7\IDE\CommonExtensions\Microsoft\TestWindow\vstest.console.exe</VSTest2012Path>
 		<SABaseline>4</SABaseline>
 		<CABaseline>10</CABaseline>
 		<CCBaseline>80</CCBaseline>
