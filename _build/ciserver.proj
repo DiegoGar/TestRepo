@@ -19,7 +19,7 @@
 		<SourceAnalysisSourceCodeFiles Include="$(WorkingDirectory)\**\*.cs" Exclude="$(WorkingDirectory)\DevCamps.Web.Tests\**\*.cs"/>
 		<SourceAnalysisSettingsFile Include="$(WorkingDirectory)\Settings.StyleCop"/>
 		<Assemblies 
-		Include="$(WorkingDirectory)\DevCamps.Data\bin\Debug\DevCamps.Data.dll;$(WorkingDirectory)\DevCamps.Web\bin\DevCamps.Web"/>
+		Include="$(WorkingDirectory)\DevCamps.Data\bin\Debug\DevCamps.Data.dll;$(WorkingDirectory)\DevCamps.Web\packages.dll;$(WorkingDirectory)\DevCamps.Web\Web.dll;$(WorkingDirectory)\DevCamps.Web\Web.Debug.dll;$(WorkingDirectory)\DevCamps.Web\Web.Release.dll"/>
 		<RuleSetDirectory Include="$(ProgramFiles32)\Microsoft Visual Studio 11.0\Team Tools\Static Analysis Tools\Rule Sets"/>
 		<ArtifactsToClean Include="StyleCopLog.txt;StyleCopViolations.xml;FxCop.results.xml"/>
 		<TestSettings Include="$(WorkingDirectory)\TestSettings1.testsettings"/>
