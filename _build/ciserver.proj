@@ -8,7 +8,7 @@
 		<FxCopPath>$(ProgramFiles32)\Microsoft Visual Studio 11.0\Team Tools\Static Analysis Tools\FxCop\FxCopCmd.exe</FxCopPath>
 		<TestResultsPath>TestResults</TestResultsPath>
 		<ExtensionTasksPath>$(ToolsPath)\ExtensionPack</ExtensionTasksPath>
-		<VSTest2012Path>VSTest.console.exe</VSTest2012Path>
+		<VSTest2012Path>VSTest.Console.exe</VSTest2012Path>
 		<SABaseline>4</SABaseline>
 		<CABaseline>10</CABaseline>
 		<CCBaseline>80</CCBaseline>
@@ -22,7 +22,7 @@
 		Include="$(WorkingDirectory)\DevCamps.Data\bin\Debug\DevCamps.Data.dll"/>
 		<RuleSetDirectory Include="$(ProgramFiles32)\Microsoft Visual Studio 11.0\Team Tools\Static Analysis Tools\Rule Sets"/>
 		<ArtifactsToClean Include="StyleCopLog.txt;StyleCopViolations.xml;FxCop.results.xml"/>
-		<TestSettings Include="$(WorkingDirectory)\TestSettings1.testsettings"/>
+		<TestSettings Include=""/> 
 		<TestContainers Include="$(WorkingDirectory)\DevCamps.Data.Tests\bin\Debug\DevCamps.Data.Tests.dll;$(WorkingDirectory)\DevCamps.Web.Tests\bin\Debug\DevCamps.Web.Tests.dll"/>
 	</ItemGroup>
 	
