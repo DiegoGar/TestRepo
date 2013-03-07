@@ -81,28 +81,28 @@
 	</Target>
 	
 
-      <!-- <Target Name="GenerateCodeCoverage" DependsOnTargets="RunTests"> -->
-	<!--	<CreateItem Include="$(TestResultsPath)\**\Out\*"> -->
-	<!--		<Output TaskParameter="Include" ItemName="ComponentOutputBin" /> -->
-	<!--	</CreateItem> -->
-	<!--	<CreateItem Include="$(TestResultsPath)\**\data.coverage"> -->
-	<!--		<Output TaskParameter="Include" ItemName="ComponentCoverageData" /> -->
-	<!--	</CreateItem> -->
+    <Target Name="GenerateCodeCoverage" DependsOnTargets="RunTests"> 
+	<CreateItem Include="$(TestResultsPath)\**\Out\*"> 
+			<Output TaskParameter="Include" ItemName="ComponentOutputBin" /> 
+		</CreateItem> 
+		<CreateItem Include="$(TestResultsPath)\**\data.coverage"> -->
+			<Output TaskParameter="Include" ItemName="ComponentCoverageData" /> 
+		</CreateItem>
   
-	<!-- <Copy SourceFiles="@(ComponentOutputBin)" DestinationFolder="$(TestResultsPath)\" /> -->
-	<!-- <Copy SourceFiles="@(ComponentCoverageData)" DestinationFolder="$(TestResultsPath)\" /> -->
+	 <Copy SourceFiles="@(ComponentOutputBin)" DestinationFolder="$(TestResultsPath)\" /> 
+	 <Copy SourceFiles="@(ComponentCoverageData)" DestinationFolder="$(TestResultsPath)\" /> 
 
-		<!-- <CheckCodeCoverage CoverageDataFile="@(ComponentCoverageData)" -->
-                  <!--     BinariesPath="$(TestResultsPath)\" -->
-                   <!--    OutFile="$(TestResultsPath)\CodeCoverage.xml" -->
-                    <!--   MinCoverage="$(CCBaseline)"
-												 /> -->
+		 <CheckCodeCoverage CoverageDataFile="@(ComponentCoverageData)"
+                       BinariesPath="$(TestResultsPath)\" 
+                       OutFile="$(TestResultsPath)\CodeCoverage.xml" 
+                      MinCoverage="$(CCBaseline)"
+												 /> 
 
-		<!-- <XslTransformation -->
-		<!--	XmlInputPaths="$(TestResultsPath)\CodeCoverage.xml" -->
-		<!--	OutputPaths="$(TestResultsPath)\CodeCoverage.html" -->
-		<!--	XslInputPath="$(ToolsPath)\Southworks\MsTestCoverageSummary.xslt" /> -->
-	<!-- </Target> -->
+		 <XslTransformation
+		XmlInputPaths="$(TestResultsPath)\CodeCoverage.xml" 
+		OutputPaths="$(TestResultsPath)\CodeCoverage.html"
+		XslInputPath="$(ToolsPath)\Southworks\MsTestCoverageSummary.xslt" />
+	</Target>
 
 
 	<UsingTask AssemblyFile="$(StyleCopPath)\MSBuild.ExtensionPack.StyleCop.dll" TaskName="MSBuild.ExtensionPack.CodeQuality.StyleCop"/>
