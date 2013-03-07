@@ -22,7 +22,7 @@
 		Include="$(WorkingDirectory)\DevCamps.Data\bin\Debug\DevCamps.Data.dll"/>
 		<RuleSetDirectory Include="$(ProgramFiles32)\Microsoft Visual Studio 11.0\Team Tools\Static Analysis Tools\Rule Sets"/>
 		<ArtifactsToClean Include="StyleCopLog.txt;StyleCopViolations.xml;FxCop.results.xml"/>
-		<TestSettings Include="$(WorkingDirectory)\RunSettings1.runsettings"/>
+		<TestSettings Include="$(WorkingDirectory)\RunSettings.runsettings"/>
 		<TestContainers Include="$(WorkingDirectory)\DevCamps.Data.Tests\bin\Debug\DevCamps.Data.Tests.dll;$(WorkingDirectory)\DevCamps.Web.Tests\bin\Debug\DevCamps.Web.Tests.dll"/>
 	</ItemGroup>
 	
