@@ -85,7 +85,7 @@
 	<CreateItem Include="$(TestResultsPath)\**\Out\*"> 
 			<Output TaskParameter="Include" ItemName="ComponentOutputBin" /> 
 		</CreateItem> 
-		<CreateItem Include="$(TestResultsPath)\**\data.coverage"> -->
+		<CreateItem Include="$(TestResultsPath)\**\data.coverage">
 			<Output TaskParameter="Include" ItemName="ComponentCoverageData" /> 
 		</CreateItem>
   
