@@ -42,6 +42,7 @@
 
   <!-- MSTest adapter -->
    <MSTest>
+    <SettingsFile>TestSettings1</SettingsFile>
     <MapInconclusiveToFailed>True</MapInconclusiveToFailed>
     <CaptureTraceOutput>false</CaptureTraceOutput>
     <DeleteDeploymentDirectoryAfterTestRunIsComplete>False</DeleteDeploymentDirectoryAfterTestRunIsComplete>
