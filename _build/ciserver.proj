@@ -9,14 +9,14 @@
 		<TestResultsPath>TestResults</TestResultsPath>
 		<ExtensionTasksPath>$(ToolsPath)\ExtensionPack</ExtensionTasksPath>
 		<VSTest2012Path>C:\Program Files (x86)\Microsoft Visual Studio 11.0\Common7\IDE\CommonExtensions\Microsoft\TestWindow\vstest.console.exe</VSTest2012Path>
-		<SABaseline>4</SABaseline>
+		<SABaseline>0</SABaseline>
 		<CABaseline>10</CABaseline>
 		<CCBaseline>80</CCBaseline>
 	</PropertyGroup>
 
 	<ItemGroup>
 		<SolutionFiles Include="$(WorkingDirectory)\DevCamps.Web.sln"/>
-		<SourceAnalysisSourceCodeFiles Include="$(WorkingDirectory)\**\*.cs" Exclude="$(WorkingDirectory)\DevCamps.Web.Tests\**\*.cs;$(WorkingDirectory)\DevCamps.Data.Tests\**\*.cs"/>
+		<SourceAnalysisSourceCodeFiles Include="$(WorkingDirectory)\DevCamps.Web.sln.cs" Exclude="$(WorkingDirectory)\DevCamps.Web.Tests\**\*.cs;$(WorkingDirectory)\DevCamps.Data.Tests\**\*.cs"/>
 		<SourceAnalysisSettingsFile Include="$(WorkingDirectory)\Settings.StyleCop"/>
 		<Assemblies 
 		Include="$(WorkingDirectory)\DevCamps.Data\bin\Debug\DevCamps.Data.dll"/>
