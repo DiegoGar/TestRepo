@@ -28,7 +28,7 @@
             </AspNet>
           <ModulePaths>
             <Exclude>
-              <!-- <ModulePath>.*CPPUnitTestFramework.*</ModulePath> -->
+              <ModulePath>.*CPPUnitTestFramework.*</ModulePath>
             </Exclude>
           </ModulePaths>
           </CodeCoverage>
@@ -41,12 +41,12 @@
   <!-- Adapter Specific sections -->
 
   <!-- MSTest adapter -->
-  <!-- <MSTest>
+   <MSTest>
     <MapInconclusiveToFailed>True</MapInconclusiveToFailed>
     <CaptureTraceOutput>false</CaptureTraceOutput>
     <DeleteDeploymentDirectoryAfterTestRunIsComplete>False</DeleteDeploymentDirectoryAfterTestRunIsComplete>
     <DeploymentEnabled>False</DeploymentEnabled>
-  </MSTest> -->
+  </MSTest>
 
 
 </RunSettings>
